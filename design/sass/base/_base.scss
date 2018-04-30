@@ -1,0 +1,22 @@
+/*universal selector instead of normalize.css*/
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  //defines what 1 rem is
+  font-size: 62.5%; //1rem = 10px
+
+
+}
+
+body {
+  //padding: 3rem;
+  box-sizing: border-box;//
+
+}
