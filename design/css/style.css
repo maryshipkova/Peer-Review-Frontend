@@ -9,21 +9,67 @@ html, body {
   height: 100%; }
 
 body {
-  box-sizing: border-box;
+  box-sizing: border-box; }
+
+a:link, a:visited {
+  color: #000;
+  text-decoration: none; }
+
+a:focus {
+  outline: none; }
+
+li {
+  list-style-type: none; }
+
+.heading-primary {
+  display: block;
+  width: 100%;
+  margin: 2rem auto; }
+
+.navbar__custom {
+  background-image: linear-gradient(to right bottom, #00d7e4, #307ff2);
+  color: #fff; }
+  .navbar__custom .nav-link:link, .navbar__custom .nav-link:visited {
+    color: #fff;
+    text-decoration: none; }
+  .navbar__custom .navbar-brand {
+    color: #fff; }
+
+.dropdown-item a {
+  color: #000; }
+
+.courses__list--item {
+  width: 80%;
+  margin: 1rem 0;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+  transition: all .2s; }
+  .courses__list--item:hover {
+    transform: translateY(-5px); }
+
+body {
+  background-color: #eef0f4; }
+
+.jumbotron {
+  background-image: url(../img/hero_Image.png);
+  height: 30rem;
+  background-size: cover;
+  color: white; }
+
+.auth {
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center; }
-
-.form__auth {
-  width: 100%;
-  max-width: 400px;
-  padding: 15px;
-  margin: auto; }
-  .form__auth h1 {
-    margin-bottom: 2rem; }
-  .form__auth label {
-    width: 23%;
-    text-align: center; }
-  .form__auth .form-control {
-    display: inline-block;
-    width: 75%; }
+  .auth__form {
+    width: 100%;
+    max-width: 400px;
+    padding: 15px;
+    margin: auto; }
+    .auth__form h1 {
+      margin-bottom: 2rem; }
+    .auth__form label {
+      width: 23%;
+      text-align: center; }
+    .auth__form .form-control {
+      display: inline-block;
+      width: 75%; }

@@ -1,0 +1,16 @@
+body{
+    background-color: $color-bg-grey;
+}
+
+.jumbotron{
+    // linear-gradient( to right bottom, rgba($color-white, 0.8), rgba($color-white, 0.8)), 
+    background-image: url(../img/hero_Image.png);
+    height: 30rem;
+    background-size: cover;
+    color: white
+    // background-color: rgba($color-white,.2);
+}
+
+// .courses{
+//     // background-color: $color-white;
+// }

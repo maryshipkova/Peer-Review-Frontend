@@ -1,20 +1,26 @@
+.auth{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-.form__auth{
-    width: 100%;
-    max-width: 400px;
-    padding: 15px;
-    margin: auto;
-
-    & h1{
-        margin-bottom: 2rem;
-    }
-
-    & label{
-        width: 23%;
-        text-align: center;
-    }
-    & .form-control{
-        display: inline-block;
-        width: 75%;
-    }
+    &__form{
+        width: 100%;
+        max-width: 400px;
+        padding: 15px;
+        margin: auto;
+    
+        & h1{
+            margin-bottom: 2rem;
+        }
+    
+        & label{
+            width: 23%;
+            text-align: center;
+        }
+        & .form-control{
+            display: inline-block;
+            width: 75%;
+        }
+    }   
 }

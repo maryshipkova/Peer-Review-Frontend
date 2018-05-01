@@ -1,0 +1,18 @@
+.navbar__custom {
+    background-image: linear-gradient(to right bottom, $color-blue-light, $color-blue-dark);
+    color: $color-white;
+    .nav-link {
+        &:link,
+        &:visited {
+            color: $color-white;
+            text-decoration: none;
+        }
+    }
+    .navbar-brand{
+        color: $color-white;
+    }
+}
+
+.dropdown-item a {
+    color: $color-black;
+}
