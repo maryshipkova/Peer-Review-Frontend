@@ -26,6 +26,10 @@ li {
   width: 100%;
   margin: 2rem auto; }
 
+.heading-tertiary {
+  font-size: 2rem;
+  text-align: center; }
+
 .navbar__custom {
   background-image: linear-gradient(to right bottom, #00d7e4, #307ff2);
   color: #fff; }
@@ -54,6 +58,52 @@ body {
   height: 30rem;
   background-size: cover;
   color: white; }
+
+.course__info {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 0.5rem 1rem; }
+
+.course__header {
+  display: flex; }
+
+.course__image {
+  width: 7rem;
+  height: 7rem;
+  background-image: linear-gradient(to right bottom, #00d7e4, #307ff2);
+  border-radius: 50%;
+  margin-left: 2rem; }
+
+.course__heading {
+  margin-left: 2rem; }
+
+.course__description {
+  margin: 1rem 2rem 1rem 3.5rem; }
+
+.course__content {
+  margin-top: 2rem;
+  justify-content: space-between;
+  display: flex; }
+
+.course__tasks, .course__students {
+  background: #fff;
+  border-radius: 5px; }
+
+.course__students {
+  width: 20rem; }
+
+.course__tasks {
+  flex: 1 1 20rem;
+  margin-right: 2rem; }
+  .course__tasks--list {
+    margin: 1rem 2rem 1rem 0; }
+  .course__tasks--item {
+    border-bottom: 1px solid #00d7e4;
+    transition: all .2s;
+    margin-bottom: 2rem; }
+    .course__tasks--item:hover {
+      cursor: pointer;
+      transform: translateY(-2px); }
 
 .auth {
   height: 100%;

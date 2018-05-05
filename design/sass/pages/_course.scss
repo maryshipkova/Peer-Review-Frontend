@@ -1,0 +1,67 @@
+.course{
+
+    &__info{
+        background-color: $color-white;
+
+        border-radius: 5px;
+        
+        padding: 0.5rem 1rem;
+    }
+    &__header{
+        display: flex;
+    }
+    &__image{
+        width: 7rem;
+        height: 7rem;
+        background-image: linear-gradient(to right bottom, $color-blue-light, $color-blue-dark);
+        border-radius: 50%;
+        margin-left: 2rem;
+     
+    }
+
+    &__heading{
+        margin-left: 2rem;
+       
+        // font-size: ;
+    }
+
+    &__description{
+
+        margin: 1rem 2rem 1rem 3.5rem;
+    }
+    &__content{
+        margin-top: 2rem;
+        justify-content: space-between;
+        display: flex;
+       
+
+
+    }
+    &__tasks,&__students{
+        background:  $color-white;
+        border-radius: 5px;
+    }
+    &__students{
+        width: 20rem;
+    }
+    &__tasks{
+        flex: 1 1 20rem;
+        margin-right: 2rem;
+        &--list{
+            margin: 1rem 2rem 1rem 0;
+ 
+        }
+
+        &--item{
+           border-bottom: 1px solid $color-blue-light;
+           transition: all .2s;
+           margin-bottom: 2rem;
+
+           &:hover{
+               cursor: pointer;
+               transform: translateY(-2px);
+           }
+        }
+
+    }
+}
