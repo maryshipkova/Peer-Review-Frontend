@@ -1,67 +1,91 @@
-.course{
-
-    &__info{
+.course {
+    &__info {
         background-color: $color-white;
-
         border-radius: 5px;
-        
         padding: 0.5rem 1rem;
     }
-    &__header{
+    &__header {
         display: flex;
     }
-    &__image{
+    &__image {
         width: 7rem;
         height: 7rem;
         background-image: linear-gradient(to right bottom, $color-blue-light, $color-blue-dark);
         border-radius: 50%;
         margin-left: 2rem;
-     
     }
-
-    &__heading{
-        margin-left: 2rem;
-       
-        // font-size: ;
+    &__heading {
+        margin-left: 2rem; // font-size: ;
     }
-
-    &__description{
-
+    &__description {
         margin: 1rem 2rem 1rem 3.5rem;
     }
-    &__content{
-        margin-top: 2rem;
-        justify-content: space-between;
-        display: flex;
-       
+}
+
+.course-content {
+
+    margin-top: 2rem;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
 
 
-    }
-    &__tasks,&__students{
-        background:  $color-white;
+    &__fragment,
+    &__nav {
+        background: $color-white;
         border-radius: 5px;
     }
-    &__students{
-        width: 20rem;
-    }
-    &__tasks{
-        flex: 1 1 20rem;
-        margin-right: 2rem;
+
+    &__nav {
+        flex: 0 0 20%;
+        // margin: ;
+        margin-right: 1.5rem;
+        
+        
         &--list{
-            margin: 1rem 2rem 1rem 0;
- 
+            height: 100%;
+            width: 100%;
+            margin: 0px;
+            padding-left: 0px;
+
+            display: flex;
+            flex-direction: column;
         }
 
+        &--link{
+            display: block;
+            height: 100%;
+            width: 100%;
+
+            &:hover{
+                background-color: #eee;
+            }
+        }
+        
         &--item{
-           border-bottom: 1px solid $color-blue-light;
-           transition: all .2s;
-           margin-bottom: 2rem;
 
-           &:hover{
-               cursor: pointer;
-               transform: translateY(-2px);
-           }
         }
 
+        &--heading{
+            display: inline-block;
+            padding: 1rem;
+        }
+    }
+
+    &__fragment {
+        flex: 1 1;
+        &--list {
+            margin: 1rem 2rem 1rem 0;
+        }
+        &--item {
+            border-bottom: 1px solid $color-blue-light;
+            transition: all .2s;
+            margin-bottom: 2rem;
+            &:hover {
+                cursor: pointer;
+                transform: translateY(-2px);
+            }
+        }
     }
 }

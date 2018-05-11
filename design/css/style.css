@@ -80,30 +80,45 @@ body {
 .course__description {
   margin: 1rem 2rem 1rem 3.5rem; }
 
-.course__content {
+.course-content {
   margin-top: 2rem;
   justify-content: space-between;
-  display: flex; }
-
-.course__tasks, .course__students {
-  background: #fff;
-  border-radius: 5px; }
-
-.course__students {
-  width: 20rem; }
-
-.course__tasks {
-  flex: 1 1 20rem;
-  margin-right: 2rem; }
-  .course__tasks--list {
-    margin: 1rem 2rem 1rem 0; }
-  .course__tasks--item {
-    border-bottom: 1px solid #00d7e4;
-    transition: all .2s;
-    margin-bottom: 2rem; }
-    .course__tasks--item:hover {
-      cursor: pointer;
-      transform: translateY(-2px); }
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start; }
+  .course-content__fragment, .course-content__nav {
+    background: #fff;
+    border-radius: 5px; }
+  .course-content__nav {
+    flex: 0 0 20%;
+    margin-right: 1.5rem; }
+    .course-content__nav--list {
+      height: 100%;
+      width: 100%;
+      margin: 0px;
+      padding-left: 0px;
+      display: flex;
+      flex-direction: column; }
+    .course-content__nav--link {
+      display: block;
+      height: 100%;
+      width: 100%; }
+      .course-content__nav--link:hover {
+        background-color: #eee; }
+    .course-content__nav--heading {
+      display: inline-block;
+      padding: 1rem; }
+  .course-content__fragment {
+    flex: 1 1; }
+    .course-content__fragment--list {
+      margin: 1rem 2rem 1rem 0; }
+    .course-content__fragment--item {
+      border-bottom: 1px solid #00d7e4;
+      transition: all .2s;
+      margin-bottom: 2rem; }
+      .course-content__fragment--item:hover {
+        cursor: pointer;
+        transform: translateY(-2px); }
 
 .auth {
   height: 100%;
