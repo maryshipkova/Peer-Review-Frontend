@@ -1,10 +1,8 @@
-body{
-    background-color: $color-bg-grey;
-}
 
 .jumbotron{
-    // linear-gradient( to right bottom, rgba($color-white, 0.8), rgba($color-white, 0.8)),
-    //background-image: linear-gradient( to right bottom, rgba($color-white, 0.8), rgba($color-white, 0.8));//url(../../img/hero_Image.png);
+
+  background-color: #ccc;
+  //  background-image: url("../../../images/home.png");
     height: 30rem;
     background-size: cover;
     color: white

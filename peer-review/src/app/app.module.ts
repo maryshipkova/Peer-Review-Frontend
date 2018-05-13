@@ -5,18 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { SystemComponent } from './system/system.component';
-import { HomePageComponent } from './system/home-page/home-page.component';
+import {SystemModule} from './system/system.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SystemComponent,
-    HomePageComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SystemModule
   ],
   providers: [],
   bootstrap: [AppComponent]
