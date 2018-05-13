@@ -1,0 +1,37 @@
+/*universal selector instead of normalize.css*/
+
+*,
+*::after,
+*::before {
+  // margin: 0;
+  // padding: 0;
+  box-sizing: inherit;
+}
+
+html,body {
+  //defines what 1 rem is
+  font-size: 100%; //1rem = 16px
+  height: 100%;
+
+}
+
+body {
+  background-color: $color-bg-grey;
+  box-sizing: border-box;//
+}
+
+a{
+  &:link,
+  &:visited{
+    color: $color-black;
+      text-decoration: none;
+  }
+  &:focus{
+    outline: none;
+  }
+
+}
+
+li{
+  list-style-type: none;
+}

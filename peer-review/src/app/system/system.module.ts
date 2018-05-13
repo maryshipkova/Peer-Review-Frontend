@@ -9,6 +9,14 @@ import {SystemRoutingModule} from './system-routing.module';
 import {RouterModule} from '@angular/router';
 import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
+import { CourseComponent } from './course/course.component';
+import { TaskPageComponent } from './course/task-page/task-page.component';
+import { SolutionPageComponent } from './course/solution-page/solution-page.component';
+import { SidebarComponent } from './course/sidebar/sidebar.component';
+import { TaskListComponent } from './course/course-page/task-list/task-list.component';
+import { CoursePageComponent } from './course/course-page/course-page.component';
+import { CourseInfoComponent } from './course/course-page/course-info/course-info.component';
+import { CourseStudentsComponent } from './course/course-page/course-students/course-students.component';
 
 @NgModule({
   imports: [
@@ -24,7 +32,15 @@ import {FormsModule} from '@angular/forms';
     InvitationsPageComponent,
     NavbarComponent,
     HomePageComponent,
-    SystemComponent
+    SystemComponent,
+    CourseComponent,
+    TaskPageComponent,
+    SolutionPageComponent,
+    SidebarComponent,
+    TaskListComponent,
+    CoursePageComponent,
+    CourseInfoComponent,
+    CourseStudentsComponent
   ]
 })
 export class SystemModule {
