@@ -15,3 +15,10 @@
         }
     }
 }
+
+.card{
+
+  &--link{
+    @include fill-link;
+  }
+}
