@@ -1,10 +1,29 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {CourseRoutingModule} from './couse-routing.module';
+import {TaskListComponent} from './course-page/task-list/task-list.component';
+import {TaskPageComponent} from './task-page/task-page.component';
+import {CourseStudentsComponent} from './course-page/course-students/course-students.component';
+import {SolutionPageComponent} from './solution-page/solution-page.component';
+import {CourseInfoComponent} from './course-page/course-info/course-info.component';
+import {SidebarComponent} from './sidebar/sidebar.component';
+import {CoursePageComponent} from './course-page/course-page.component';
+import {CourseComponent} from './course.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    CourseRoutingModule
   ],
-  declarations: []
+  declarations: [
+    CourseComponent,
+    TaskPageComponent,
+    SolutionPageComponent,
+    SidebarComponent,
+    TaskListComponent,
+    CoursePageComponent,
+    CourseInfoComponent,
+    CourseStudentsComponent
+  ]
 })
 export class CourseModule { }
