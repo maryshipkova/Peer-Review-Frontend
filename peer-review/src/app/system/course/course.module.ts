@@ -9,6 +9,9 @@ import {CourseInfoComponent} from './course-page/course-info/course-info.compone
 import {SidebarComponent} from './sidebar/sidebar.component';
 import {CoursePageComponent} from './course-page/course-page.component';
 import {CourseComponent} from './course.component';
+import { TaskInfoComponent } from './task-page/task-info/task-info.component';
+import { TaskSolutionsComponent } from './task-page/task-solutions/task-solutions.component';
+import { SolutionAddComponent } from './task-page/solution-add/solution-add.component';
 
 @NgModule({
   imports: [
@@ -23,7 +26,10 @@ import {CourseComponent} from './course.component';
     TaskListComponent,
     CoursePageComponent,
     CourseInfoComponent,
-    CourseStudentsComponent
+    CourseStudentsComponent,
+    TaskInfoComponent,
+    TaskSolutionsComponent,
+    SolutionAddComponent
   ]
 })
 export class CourseModule { }

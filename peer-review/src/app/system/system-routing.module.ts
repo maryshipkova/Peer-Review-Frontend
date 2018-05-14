@@ -6,6 +6,7 @@ import {CoursesPageComponent} from './courses-page/courses-page.component';
 import {InvitationsPageComponent} from './invitations-page/invitations-page.component';
 import {CourseComponent} from './course/course.component';
 import {SolutionPageComponent} from './course/solution-page/solution-page.component';
+import {CoursePageComponent} from './course/course-page/course-page.component';
 
 const routes: Routes = [
   {
@@ -14,7 +15,7 @@ const routes: Routes = [
       {path: 'home', component: HomePageComponent},
       {path: 'courses', component: CoursesPageComponent},
       {path: 'invitations', component: InvitationsPageComponent},
-      {path: 'course', component: CourseComponent}, // temp
+      {path: 'courseid', component: CoursePageComponent}, // temp
       {path: 'solution', component: SolutionPageComponent}
     ]
   }

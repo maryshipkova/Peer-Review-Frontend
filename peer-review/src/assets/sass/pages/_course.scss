@@ -75,6 +75,7 @@
       display: flex;
       flex-direction: column;
 
+
       &--element{
         background: $color-white;
         border-radius: 5px;
@@ -84,6 +85,13 @@
         &--list {
             margin: 1rem 2rem 1rem 0;
         }
+
+      &--link{
+        display: block;
+        width: 100%;
+        height: 100%;
+
+      }
         &--item {
             border-bottom: 1px solid $color-blue-light;
             transition: all .2s;

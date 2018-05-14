@@ -12,7 +12,6 @@ import {CoursesPageComponent} from './courses-page/courses-page.component';
 
 @NgModule({
   imports: [
-    FormsModule,
     CommonModule,
     RouterModule,
     SystemRoutingModule,

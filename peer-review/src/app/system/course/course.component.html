@@ -5,7 +5,7 @@
       <div class="course__header">
         <div class="course__image"></div>
         <h1 class="course__heading text-muted display-4">
-          <a [routerLink]="['/course/info']">UML</a>
+          <a [routerLink]="['/courseid/course/info']">UML</a>
 
           <hr>
         </h1>
@@ -15,8 +15,8 @@
         aliquid, libero consectetur.
       </p>
     </div>
-
-      <peer-review-course-page></peer-review-course-page>
+      <router-outlet></router-outlet>
+      <!--<peer-review-course-page></peer-review-course-page>-->
 
   </section>
 </main>

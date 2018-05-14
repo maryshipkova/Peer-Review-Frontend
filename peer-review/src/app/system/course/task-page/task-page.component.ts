@@ -6,7 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./task-page.component.scss']
 })
 export class TaskPageComponent implements OnInit {
-
+  navRoutes = [
+    {
+      'title': 'Task information',
+      'route': 'info'
+    },
+    {
+      'title': 'Solutions',
+      'route': 'solutions'
+    },
+    {
+      'title': 'Add solution',
+      'route': 'add'
+    }
+  ];
   constructor() { }
 
   ngOnInit() {
