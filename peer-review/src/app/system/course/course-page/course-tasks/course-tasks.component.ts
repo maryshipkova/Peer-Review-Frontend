@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'peer-review-task-list',
-  templateUrl: './task-list.component.html',
-  styleUrls: ['./task-list.component.scss']
+  templateUrl: './course-tasks.component.html',
+  styleUrls: ['./course-tasks.component.scss']
 })
-export class TaskListComponent implements OnInit {
+export class CourseTasksComponent implements OnInit {
 
   constructor() { }
 
