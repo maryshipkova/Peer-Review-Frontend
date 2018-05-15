@@ -17,11 +17,13 @@ import {TaskSolutionsComponent} from './task/task-page/task-solutions/task-solut
 import {SolutionAddComponent} from './task/task-page/solution-add/solution-add.component';
 import {TaskPageComponent} from './task/task-page/task-page.component';
 import { TaskAddComponent } from './course-page/task-add/task-add.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
-    CourseRoutingModule
+    CourseRoutingModule,
+    FormsModule
   ],
   declarations: [
     CourseComponent,
