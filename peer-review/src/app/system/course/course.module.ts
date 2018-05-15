@@ -18,6 +18,7 @@ import {SolutionAddComponent} from './task/task-page/solution-add/solution-add.c
 import {TaskPageComponent} from './task/task-page/task-page.component';
 import { TaskAddComponent } from './course-page/task-add/task-add.component';
 import {FormsModule} from '@angular/forms';
+import { CriteriaAddComponent } from './task/task-page/criteria-add/criteria-add.component';
 
 @NgModule({
   imports: [
@@ -41,7 +42,8 @@ import {FormsModule} from '@angular/forms';
     SolutionReviewsComponent,
     ReviewAddComponent,
     TaskComponent,
-    TaskAddComponent
+    TaskAddComponent,
+    CriteriaAddComponent
   ]
 })
 export class CourseModule { }

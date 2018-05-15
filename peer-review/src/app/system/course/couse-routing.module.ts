@@ -16,6 +16,7 @@ import {TaskSolutionsComponent} from './task/task-page/task-solutions/task-solut
 import {SolutionAddComponent} from './task/task-page/solution-add/solution-add.component';
 import {TaskPageComponent} from './task/task-page/task-page.component';
 import {TaskAddComponent} from './course-page/task-add/task-add.component';
+import {CriteriaAddComponent} from './task/task-page/criteria-add/criteria-add.component';
 
 
 const routes: Routes = [
@@ -42,7 +43,8 @@ const routes: Routes = [
                 children: [
                   {path: 'info', component: TaskInfoComponent},
                   {path: 'solutions', component: TaskSolutionsComponent},
-                  {path: 'add', component: SolutionAddComponent}
+                  {path: 'add-solution', component: SolutionAddComponent},
+                  {path: 'add-criteria', component: CriteriaAddComponent}
                 ]},
               {
                 path: 'solutionid', component: SolutionPageComponent,
