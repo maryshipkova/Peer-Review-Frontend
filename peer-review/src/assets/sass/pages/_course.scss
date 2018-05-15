@@ -32,9 +32,11 @@
 
 
 
+
     &__nav {
       background: $color-white;
       border-radius: 5px;
+      overflow: hidden;
         flex: 0 0 20%;
         // margin: ;
         margin-right: 1.5rem;

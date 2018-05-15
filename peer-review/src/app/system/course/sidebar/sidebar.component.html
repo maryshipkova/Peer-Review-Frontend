@@ -2,7 +2,7 @@
   <ul class="course-content__nav--list">
 
     <li *ngFor="let navRoute of navRoutes" class="course-content__nav--item" >
-      <a [routerLink]="[navRoute.route]" class="course-content__nav--link">
+      <a [routerLink]="[navRoute.route]"   routerLinkActive="active-link" class="course-content__nav--link">
         <h5 class="course-content__nav--heading">{{navRoute.title}}</h5>
       </a>
     </li>

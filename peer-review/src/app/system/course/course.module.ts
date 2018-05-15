@@ -16,6 +16,7 @@ import {TaskInfoComponent} from './task/task-page/task-info/task-info.component'
 import {TaskSolutionsComponent} from './task/task-page/task-solutions/task-solutions.component';
 import {SolutionAddComponent} from './task/task-page/solution-add/solution-add.component';
 import {TaskPageComponent} from './task/task-page/task-page.component';
+import { TaskAddComponent } from './course-page/task-add/task-add.component';
 
 @NgModule({
   imports: [
@@ -37,7 +38,8 @@ import {TaskPageComponent} from './task/task-page/task-page.component';
     SolutionInfoComponent,
     SolutionReviewsComponent,
     ReviewAddComponent,
-    TaskComponent
+    TaskComponent,
+    TaskAddComponent
   ]
 })
 export class CourseModule { }

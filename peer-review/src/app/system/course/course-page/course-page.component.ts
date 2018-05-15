@@ -18,6 +18,10 @@ export class CoursePageComponent implements OnInit {
     {
       'title': 'Students',
       'route': 'students'
+    },
+    {
+      'title': 'Add task',
+      'route': 'add'
     }
   ];
   constructor() { }
