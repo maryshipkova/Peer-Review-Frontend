@@ -1,3 +1,64 @@
-<p>
-  sign-up works!
-</p>
+<div class="auth">
+  <form class="auth__form" #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm)">
+    <h1 class="display-4 text-center">Sign up plz</h1>
+    <div class="form-group">
+      <label for="login">Login</label>
+      <input type="text" class="form-control"
+             id="login"
+             placeholder="Enter login"
+             required
+             name="login"
+             ngModel
+      >
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control"
+             id="email"
+             placeholder="Enter email"
+             email required
+             name="email"
+             ngModel
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="firstname">First name</label>
+      <input type="text" class="form-control"
+             id="firstname"
+             placeholder="Enter your first name"
+             required
+             name="firstname"
+             ngModel
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="secondname">Second name</label>
+      <input type="text" class="form-control"
+             id="secondname"
+             placeholder="Enter your second name"
+             required
+             name="second"
+             ngModel
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password"
+             class="form-control"
+             id="password"
+             placeholder="Password"
+             required
+             name="password"
+             ngModel
+      >
+    </div>
+
+    <button type="submit" class="btn btn-outline-success btn-block"
+            [disabled]="signupForm.invalid"
+    >Submit
+    </button>
+  </form>
+</div>
