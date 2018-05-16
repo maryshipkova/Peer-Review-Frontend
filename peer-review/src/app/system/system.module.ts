@@ -9,6 +9,7 @@ import {RouterModule} from '@angular/router';
 import {FormsModule} from '@angular/forms';
 import {CourseModule} from './course/course.module';
 import {CoursesPageComponent} from './courses-page/courses-page.component';
+import { SComponent } from './shared/services/s/s.component';
 
 @NgModule({
   imports: [
@@ -24,7 +25,8 @@ import {CoursesPageComponent} from './courses-page/courses-page.component';
     InvitationsPageComponent,
     NavbarComponent,
     HomePageComponent,
-    SystemComponent
+    SystemComponent,
+    SComponent
   ]
 })
 export class SystemModule {
