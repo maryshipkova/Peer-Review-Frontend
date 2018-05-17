@@ -6,10 +6,12 @@ import {SystemComponent} from './system.component';
 import {HomePageComponent} from './home-page/home-page.component';
 import {SystemRoutingModule} from './system-routing.module';
 import {RouterModule} from '@angular/router';
-import {FormsModule} from '@angular/forms';
 import {CourseModule} from './course/course.module';
 import {CoursesPageComponent} from './courses-page/courses-page.component';
-import { SComponent } from './shared/services/s/s.component';
+import {TaskService} from './shared/services/task.service';
+import {CourseService} from './shared/services/course.service';
+import {ReviewService} from './shared/services/review.service';
+import {SolutionService} from './shared/services/solution.service';
 
 @NgModule({
   imports: [
@@ -25,9 +27,9 @@ import { SComponent } from './shared/services/s/s.component';
     InvitationsPageComponent,
     NavbarComponent,
     HomePageComponent,
-    SystemComponent,
-    SComponent
-  ]
+    SystemComponent
+  ],
+  providers: [TaskService, CourseService, ReviewService, SolutionService]
 })
 export class SystemModule {
 }

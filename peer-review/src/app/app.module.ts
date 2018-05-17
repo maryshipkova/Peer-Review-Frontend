@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import {SystemModule} from './system/system.module';
 import {AuthModule} from './auth/auth.module';
 import {HttpClientModule} from '@angular/common/http';
+import {UserService} from './common/services/user.service';
+import {AuthService} from './common/services/auth.service';
 
 
 @NgModule({
@@ -20,7 +22,7 @@ import {HttpClientModule} from '@angular/common/http';
     AuthModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [UserService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

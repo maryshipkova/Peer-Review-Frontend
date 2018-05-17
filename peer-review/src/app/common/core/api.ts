@@ -1,12 +1,10 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpResponse} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
-
 
 @Injectable()
 export class Api {
-  private baseUrl = 'http://localhost:3000/';
+  private baseUrl = 'http://reviewyourselfproject.azurewebsites.net/';
 
   constructor(public http: HttpClient) {
 
