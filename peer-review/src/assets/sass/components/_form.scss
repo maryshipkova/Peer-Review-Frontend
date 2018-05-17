@@ -1,3 +1,25 @@
 .form {
   padding: 0.5rem 2rem 0.5rem 1rem;
+
+  &__criteria{
+      display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    //justify-content: space-between;
+
+
+
+    &--name{
+      flex: 0 1 70% ;
+      margin-right: 2rem;
+
+    }
+    &--value{
+      flex: 0 0 10%;
+      margin-right: 2rem;
+    }
+    &--button{
+      margin-top: 1rem;
+    }
+  }
 }

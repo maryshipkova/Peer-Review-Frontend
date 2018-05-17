@@ -20,6 +20,7 @@ import { TaskAddComponent } from './course-page/task-add/task-add.component';
 import {FormsModule} from '@angular/forms';
 import { CriteriaAddComponent } from './task/task-page/criteria-add/criteria-add.component';
 import { CourseInviteComponent } from './course-page/course-invite/course-invite.component';
+import { CriteriaComponent } from './criteria/criteria.component';
 
 @NgModule({
   imports: [
@@ -45,7 +46,8 @@ import { CourseInviteComponent } from './course-page/course-invite/course-invite
     TaskComponent,
     TaskAddComponent,
     CriteriaAddComponent,
-    CourseInviteComponent
+    CourseInviteComponent,
+    CriteriaComponent
   ]
 })
 export class CourseModule { }
