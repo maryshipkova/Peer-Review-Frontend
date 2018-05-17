@@ -1,0 +1,25 @@
+<div class="course-content__fragment--element">
+  <h3 class="heading-tertiary display-4">Invite user</h3>
+  <hr>
+
+  <form class="form" #inviteForm="ngForm" (ngSubmit)="onSubmit(inviteForm)">
+    <div class="form-group">
+      <!--[ngClass]="{'has-error': name.invalid && name.touched}"-->
+
+      <label for="task-title">User login</label>
+      <input type="text"
+             class="form-control"
+             id="task-title" placeholder="Enter user login"
+             required
+             name="login"
+             ngModel
+      >
+    </div>
+
+    <button type="submit"
+            class="btn btn-outline-primary"
+            [disabled]="inviteForm.invalid"
+    >Invite
+    </button>
+  </form>
+</div>

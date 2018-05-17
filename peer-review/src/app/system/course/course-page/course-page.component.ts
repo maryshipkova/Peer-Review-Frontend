@@ -22,6 +22,10 @@ export class CoursePageComponent implements OnInit {
     {
       'title': 'Add task',
       'route': 'add'
+    },
+    {
+      'title': 'Invite user',
+      'route': 'invite'
     }
   ];
   constructor() { }

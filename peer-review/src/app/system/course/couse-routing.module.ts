@@ -17,6 +17,7 @@ import {SolutionAddComponent} from './task/task-page/solution-add/solution-add.c
 import {TaskPageComponent} from './task/task-page/task-page.component';
 import {TaskAddComponent} from './course-page/task-add/task-add.component';
 import {CriteriaAddComponent} from './task/task-page/criteria-add/criteria-add.component';
+import {CourseInviteComponent} from './course-page/course-invite/course-invite.component';
 
 
 const routes: Routes = [
@@ -32,7 +33,8 @@ const routes: Routes = [
               {path: 'info', component: CourseInfoComponent},
               {path: 'students', component: CourseStudentsComponent},
               {path: 'tasks', component: CourseTasksComponent},
-              {path: 'add', component: TaskAddComponent}
+              {path: 'add', component: TaskAddComponent},
+              {path: 'invite', component: CourseInviteComponent}
             ],
           },
           {
