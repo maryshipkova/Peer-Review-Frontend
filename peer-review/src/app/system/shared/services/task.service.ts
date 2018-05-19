@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 import {Api} from '../../../common/core/api';
 import {TaskModel} from '../../../common/models/task.model';
@@ -19,7 +19,8 @@ export class TaskService extends Api {
     return this.get('url');
   }
 
-  getTaskListByCourse(token: string, courseId: number, userId: number): Observable<TaskModel[]> {
+  getTaskListByCourse(token: string, courseId: number, userId: string): Observable<TaskModel[]> {
+
     return this.get(`tasks/GetByCourse/${courseId}?TokenData=${token}&UserId=${userId}`);
   }
 

@@ -18,7 +18,7 @@ export class CourseTasksComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.sub = this.taskService.getTaskListByCourse('meow', 1, 2)
+    this.sub = this.taskService.getTaskListByCourse('meow', 1, '2')
       .subscribe(() => {
           this.tasks = [
             {

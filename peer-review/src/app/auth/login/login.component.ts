@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
+import {AuthService} from '../../common/services/auth.service';
 
 @Component({
   selector: 'peer-review-login',
@@ -8,11 +9,17 @@ import {NgForm} from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthService) {
+  }
 
   ngOnInit() {
   }
+
   onSubmit(form: NgForm) {
-    console.log( form.value);
+    const {login, password} = form.value;
+    // console.log(login, password);
+    this.authService.signIn(login, password).subscribe(data => {
+      console.log(data);
+    });
   }
 }

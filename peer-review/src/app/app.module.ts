@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {SystemModule} from './system/system.module';
 import {AuthModule} from './auth/auth.module';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientJsonpModule, HttpClientModule} from '@angular/common/http';
 import {UserService} from './common/services/user.service';
 import {AuthService} from './common/services/auth.service';
 
@@ -20,9 +20,10 @@ import {AuthService} from './common/services/auth.service';
     AppRoutingModule,
     SystemModule,
     AuthModule,
-    HttpClientModule
+    HttpClientModule,
+    HttpClientJsonpModule
   ],
-  providers: [UserService,AuthService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
