@@ -12,10 +12,9 @@ export class UserService extends Api {
     super(http);
   }
 
-  getUserById(token: string, userId: number): Observable<UserModel> {
-
-    return this.get(`users?email=${userId}`)
-      .map((user: UserModel[]) => user[0] ? user[0] : undefined);
+  getUserById(TokenData: string = window.localStorage.token, UserId: number = window.localStorage.userId): Observable<UserModel> {
+    return this.get(`User?TokenData=${TokenData}&UserId=${UserId}`);
+      // .map((user: UserModel[]) => user[0] ? user[0] : undefined);
   }
 
   getUserByLogin(login: string) {

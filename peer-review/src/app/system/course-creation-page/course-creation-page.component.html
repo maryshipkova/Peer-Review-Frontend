@@ -1,3 +1,34 @@
-<p>
-  course-creation-page works!
-</p>
+<div class="course-content__fragment--element container">
+  <h3 class="heading-tertiary display-4">Create new Task</h3>
+  <hr>
+
+  <form class="form" #courseForm="ngForm" (ngSubmit)="onSubmit(courseForm)">
+    <div class="form-group">
+      <!--[ngClass]="{'has-error': name.invalid && name.touched}"-->
+
+      <label for="task-title">Course title</label>
+      <input type="text"
+             class="form-control"
+             id="task-title" placeholder="Task title"
+             required
+             name="title"
+             ngModel
+      >
+    </div>
+    <div class="form-group">
+      <label for="task-description">Course description</label>
+      <input type="text"
+             class="form-control"
+             id="task-description"
+             placeholder="Description"
+             name="description"
+             ngModel
+      >
+    </div>
+    <button type="submit"
+            class="btn btn-outline-primary"
+            [disabled]="courseForm.invalid"
+    >Submit
+    </button>
+  </form>
+</div>

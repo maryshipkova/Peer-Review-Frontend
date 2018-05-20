@@ -12,15 +12,22 @@ export class CourseService extends Api {
     super(http);
   }
 
-  createCourse(course: CourseModel, token: string = window.localStorage.token): Observable<CourseModel> {
-    return this.post('url', [token, course]);
+  createCourse(course: CourseModel, TokenData: string = window.localStorage.token, UserId: string = window.localStorage.userId)
+    : Observable<CourseModel> {
+    this.params = new HttpParams({
+        fromObject: JSON.parse(JSON.stringify(course))
+      }
+    );
+
+    return this.post( `Course?TokenData=${TokenData}&UserId=${UserId}`, this.params);
   }
 
   getCourseById(courseId: string, token: string = window.localStorage.token): Observable<CourseModel> {
-    return this.get('url');
+    return this.get(`url`);
   }
 
-  getCourseListByUser(TokenData: string = window.localStorage.token, UserId: string = window.localStorage.userId): Observable<CourseModel[]> {
+  getCourseListByUser(TokenData: string = window.localStorage.token, UserId: string = window.localStorage.userId)
+    : Observable<CourseModel[]> {
 
     return this.get(`courses/GetByUser?TokenData=${TokenData}&UserId=${UserId}`);
   }

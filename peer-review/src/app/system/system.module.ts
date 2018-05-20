@@ -13,13 +13,15 @@ import {CourseService} from './shared/services/course.service';
 import {ReviewService} from './shared/services/review.service';
 import {SolutionService} from './shared/services/solution.service';
 import { CourseCreationPageComponent } from './course-creation-page/course-creation-page.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
     SystemRoutingModule,
-    CourseModule
+    CourseModule,
+    FormsModule
 
 
   ],
