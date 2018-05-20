@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import {Api} from '../../../common/core/api';
 import {CourseModel} from '../../../common/models/course.model';
 import {Observable} from 'rxjs/Observable';
@@ -7,27 +7,29 @@ import {Observable} from 'rxjs/Observable';
 @Injectable()
 export class CourseService extends Api {
 
+
   constructor(public http: HttpClient) {
     super(http);
   }
 
-  createCourse(token: string, course: CourseModel): Observable<CourseModel> {
+  createCourse(course: CourseModel, token: string = window.localStorage.token): Observable<CourseModel> {
     return this.post('url', [token, course]);
   }
 
-  getCourseById(token: string, courseId: number): Observable<CourseModel> {
+  getCourseById(courseId: string, token: string = window.localStorage.token): Observable<CourseModel> {
     return this.get('url');
   }
 
-  getCourseListByUser(token: string, userId: number): Observable<CourseModel[]> {
-    return this.get('url');
+  getCourseListByUser(TokenData: string = window.localStorage.token, UserId: string = window.localStorage.userId): Observable<CourseModel[]> {
+
+    return this.get(`courses/GetByUser?TokenData=${TokenData}&UserId=${UserId}`);
   }
 
-  inviteUser(userId: string, token: number, courseId: number): Observable<CourseModel> {
+  inviteUser(userId: string, token: string, courseId: number): Observable<CourseModel> {
     return this.post('url', [userId, token, courseId]);
   }
 
-  isMember(token: number, courseId: number): Observable<CourseModel> {
+  isMember(token: string, courseId: string): Observable<CourseModel> {
     return this.get('url');
   }
 }

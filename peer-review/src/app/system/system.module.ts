@@ -12,6 +12,7 @@ import {TaskService} from './shared/services/task.service';
 import {CourseService} from './shared/services/course.service';
 import {ReviewService} from './shared/services/review.service';
 import {SolutionService} from './shared/services/solution.service';
+import { CourseCreationPageComponent } from './course-creation-page/course-creation-page.component';
 
 @NgModule({
   imports: [
@@ -27,7 +28,8 @@ import {SolutionService} from './shared/services/solution.service';
     InvitationsPageComponent,
     NavbarComponent,
     HomePageComponent,
-    SystemComponent
+    SystemComponent,
+    CourseCreationPageComponent
   ],
   providers: [TaskService, CourseService, ReviewService, SolutionService]
 })

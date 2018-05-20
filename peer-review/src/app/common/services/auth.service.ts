@@ -37,20 +37,12 @@ export class AuthService extends Api {
   }
 
   signIn(login: string, password: string) {
-    // this.params = new HttpParams({
-    //   fromObject: {
-    //     Login: login,
-    //     Password: password
-    //   }
-    // });
-    const par = {
-      'Login': login,
-      'Password': password
-    };
-    return this.post(`users/Sign-in`, par
-      // {
-      //    'params': this.params
-      //  }
-    );
+
+    // test
+    this.params = new HttpParams({fromObject: {
+        'Login': '5MZBV8HOJ9JFBJV',
+        'Password': 'T7S5T0MRMO07OQL'
+      }});
+    return this.post(`users/Sign-in`, this.params);
   }
 }
