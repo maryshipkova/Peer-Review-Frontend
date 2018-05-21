@@ -1,3 +1,5 @@
+import {CriteriaModel} from './criteria.model';
+
 export class TaskModel {
   constructor(
     public title: string,
@@ -5,6 +7,7 @@ export class TaskModel {
     public courseId: string,
     public posted: Date,
     public TaskId?: string,
+    public CriteriaCollection?: CriteriaModel[]
   ) {
   }
 }

@@ -18,7 +18,7 @@ export class TaskService extends Api {
       }
     );
 
-    return this.post(`api/tasks/Add?TokenData=${this.TokenData}&UserId=${this.UserId}`, this.params);
+    return this.post(`tasks/Add?TokenData=${this.TokenData}&UserId=${this.UserId}`, this.params);
   }
 
   getTaskById(taskId: string): Observable<TaskModel> {
