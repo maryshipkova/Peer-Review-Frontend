@@ -17,7 +17,7 @@ const routes: Routes = [
       {path: 'home', component: HomePageComponent},
       {path: 'courses', component: CoursesPageComponent},
       {path: 'invitations', component: InvitationsPageComponent},
-      {path: 'courseid', component: CoursePageComponent}, // temp
+      {path: ':id', component: CoursePageComponent}, // temp
       {path: 'solution', component: SolutionPageComponent},
       {path: 'create-course', component: CourseCreationPageComponent}
     ]

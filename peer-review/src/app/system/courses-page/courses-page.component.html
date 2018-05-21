@@ -2,23 +2,13 @@
   <section class="courses">
     <ul class="courses__list">
       <h1 class="heading-primary">My courses</h1>
-      <li class="courses__list--item">
-        <div class="card">
-          <div class="card-body">
-            <a class="card--link" [routerLink]="['/courseid/course/info']">
-            <h5 class="card-title">UML</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, quas.</p>
-            </a>
-          </div>
-        </div>
-      </li>
 
-      <li class="courses__list--item" *ngFor="let task of tasks">
+      <li class="courses__list--item" *ngFor="let course of courses">
         <div class="card">
           <div class="card-body">
-            <a class="card--link" [routerLink]="['/courseid/course/info']">
-              <h5 class="card-title">UML</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, quas.</p>
+            <a class="card--link" [routerLink]="['/'+course.Id+'/course/info']">
+              <h5 class="card-title">{{course.Title}}</h5>
+              <p class="card-text">{{course.Description}}</p>
             </a>
           </div>
         </div>

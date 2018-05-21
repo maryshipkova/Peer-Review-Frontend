@@ -8,6 +8,8 @@ export class Api {
 
   private baseUrl = 'http://reviewyourselfproject.azurewebsites.net/api/';
   protected params: HttpParams;
+  protected TokenData: string = window.localStorage.token;
+  protected UserId: string = window.localStorage.userId;
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json' //,

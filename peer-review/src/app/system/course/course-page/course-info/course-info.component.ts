@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {CourseService} from '../../../shared/services/course.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'peer-review-course-info',
@@ -7,8 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CourseInfoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private courseService: CourseService, private route: ActivatedRoute) {
 
+  }
   ngOnInit() {
   }
 

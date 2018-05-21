@@ -25,7 +25,7 @@ const routes: Routes = [
     path: '', component: SystemComponent,
     children: [
       {
-        path: 'courseid', component: CourseComponent,
+        path: ':id', component: CourseComponent,
         children: [
           {
             path: 'course', component: CoursePageComponent, children: [

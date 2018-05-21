@@ -32,17 +32,9 @@ export class CourseCreationPageComponent implements OnInit, OnDestroy {
         console.log(data);
       });
     });
-
-    //   Observable.combineLatest(
-    // this.userService.getUserById(),
-    //
-    // )
-    //     .subscribe((data: [Bill, any]) => {
-    //
-    // });
   }
 
   ngOnDestroy(): void {
-    this.sub.unsubscribe();
+    if (this.sub) this.sub.unsubscribe();
   }
 }

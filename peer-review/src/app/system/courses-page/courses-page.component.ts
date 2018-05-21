@@ -9,19 +9,20 @@ import {CourseService} from '../shared/services/course.service';
 })
 export class CoursesPageComponent implements OnInit, OnDestroy {
   sub: Subscription;
-
+  courses = [];
 
   constructor(private courseService: CourseService) {
   }
 
   ngOnInit() {
     this.sub = this.courseService.getCourseListByUser().subscribe(data => {
-      console.log(data);
+      this.courses = data;
+      console.log(this.courses);
     });
   }
 
   ngOnDestroy(): void {
-    if(this.sub)this.sub.unsubscribe();
+    if (this.sub) this.sub.unsubscribe();
   }
 
 }

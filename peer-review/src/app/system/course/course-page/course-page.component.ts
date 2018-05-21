@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {CourseModel} from '../../../common/models/course.model';
+import {CourseService} from '../../shared/services/course.service';
+import {Subscription} from 'rxjs/Subscription';
+import {ActivatedRoute, ParamMap, Params, Router} from '@angular/router';
 
 @Component({
   selector: 'peer-review-course-page',
@@ -6,6 +10,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./course-page.component.scss']
 })
 export class CoursePageComponent implements OnInit {
+  sub: Subscription;
+  course: CourseModel;
   navRoutes = [
     {
       'title': 'Course information',
@@ -28,9 +34,21 @@ export class CoursePageComponent implements OnInit {
       'route': 'invite'
     }
   ];
-  constructor() { }
 
-  ngOnInit() {
+  constructor(private courseService: CourseService, private route: ActivatedRoute, private router: Router) {
+
   }
 
+  ngOnInit() {
+    this.sub = this.route.params.subscribe(params => {
+      if (params['id']) {
+        this.courseService.getCourseById(params['id']).subscribe(data => {
+          this.course = data;
+          console.log(this.course);
+          this.router.navigate(['./course/info'], {relativeTo: this.route});
+        });
+      }
+
+    });
+  }
 }
