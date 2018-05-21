@@ -11,17 +11,23 @@ export class TaskService extends Api {
     super(http);
   }
 
-  createTask(token: string, task: TaskModel): Observable<TaskModel> {
-    return this.post('url', [token, task]);
+  createTask(task: TaskModel)
+    : Observable<TaskModel> {
+    this.params = new HttpParams({
+        fromObject: JSON.parse(JSON.stringify(task))
+      }
+    );
+
+    return this.post(`api/tasks/Add?TokenData=${this.TokenData}&UserId=${this.UserId}`, this.params);
   }
 
-  getTaskById(token: string, taskId: number): Observable<TaskModel> {
-    return this.get('url');
+  getTaskById(taskId: string): Observable<TaskModel> {
+    return this.get(`tasks/GetById/${taskId}?TokenData=${this.TokenData}&UserId=${this.UserId}`);
   }
 
-  getTaskListByCourse(token: string, courseId: number, userId: string): Observable<TaskModel[]> {
+  getTaskListByCourse(courseId: string): Observable<TaskModel[]> {
 
-    return this.get(`tasks/GetByCourse/${courseId}?TokenData=${token}&UserId=${userId}`);
+    return this.get(`tasks/GetByCourse/${courseId}?TokenData=${this.TokenData}&UserId=${this.UserId}`);
   }
 
 }

@@ -5,7 +5,7 @@ export class CourseModel {
     public Title: string,
     public Description: string,
     public Mentor: UserModel,
-    public Id= null
+    public Id?: string
   ) {
   }
 }

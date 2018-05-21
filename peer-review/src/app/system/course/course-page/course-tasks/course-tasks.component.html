@@ -1,19 +1,14 @@
 <div class="course-content__fragment--element" >
-  <!--*ngIf="isLoaded"-->
   <h3 class="heading-tertiary display-4">Tasks</h3>
   <hr>
-  <ul class="course-content__fragment--list">
-    <li class="course-content__fragment--item">
-      <a [routerLink]="['../../taskid/task/info']" class="course-content__fragment--link">
-        <h5 class="heading-task">UML project</h5>
-      </a>
-    </li>
+  <div *ngIf="!isLoaded">loading</div>
+  <ul class="course-content__fragment--list"   *ngIf="isLoaded">
     <li class="course-content__fragment--item" *ngFor="let task of tasks">
-      <a [routerLink]="['../../'+task.id+'/task/info']" class="course-content__fragment--link">
+      <a [routerLink]="['../../'+task.id]" class="course-content__fragment--link">
         <h5 class="heading-task">{{task.title}}</h5>
       </a>
     </li>
   </ul>
 </div>
 
-<!--<div *ngIf="!isLoaded">loading</div>-->
+

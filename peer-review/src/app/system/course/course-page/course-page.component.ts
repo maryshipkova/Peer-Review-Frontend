@@ -15,7 +15,7 @@ export class CoursePageComponent implements OnInit {
       'route': 'info'
     },
     {
-      'title': 'Tasks and rating',
+      'title': 'Tasks',
       'route': 'tasks'
     },
     {

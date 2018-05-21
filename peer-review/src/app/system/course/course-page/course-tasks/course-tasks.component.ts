@@ -2,6 +2,8 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Subscription} from 'rxjs/Subscription';
 import {TaskService} from '../../../shared/services/task.service';
 import {TaskModel} from '../../../../common/models/task.model';
+import {CourseModel} from '../../../../common/models/course.model';
+import {CourseDataService} from '../course-data.service';
 
 @Component({
   selector: 'peer-review-task-list',
@@ -9,28 +11,20 @@ import {TaskModel} from '../../../../common/models/task.model';
   styleUrls: ['./course-tasks.component.scss']
 })
 export class CourseTasksComponent implements OnInit, OnDestroy {
+  course: CourseModel;
   isLoaded = false;
   sub: Subscription;
   tasks = []; // : TaskModel[];
 
 
-  constructor(private taskService: TaskService) {
+  constructor(private taskService: TaskService, private courseDataService: CourseDataService) {
   }
 
   ngOnInit() {
-    this.sub = this.taskService.getTaskListByCourse('meow', 1, '2')
-      .subscribe(() => {
-          this.tasks = [
-            {
-              'title': 'Meow',
-              'id': 1234
-            },
-            {
-              'title': 'qwerty',
-              'id': 1235
-            },
-          ];
-          console.log(this.tasks);
+    this.course = this.courseDataService.getCourse();
+    this.sub = this.taskService.getTaskListByCourse(this.course.Id)
+      .subscribe((data) => {
+          this.tasks = data;
           this.isLoaded = true;
         }
       );
