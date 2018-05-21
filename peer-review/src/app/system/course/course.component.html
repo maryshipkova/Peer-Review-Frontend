@@ -1,22 +1,20 @@
 <main class="container">
-  <section class="course">
+  <div *ngIf="!isLoaded">loading</div>
+  <section class="course" *ngIf="isLoaded">
 
     <div class="course__info">
       <div class="course__header">
         <div class="course__image"></div>
         <h1 class="course__heading text-muted display-4">
-          <a [routerLink]="['/+course.Id+/course/info']">UML</a>
+          <a [routerLink]="['/'+course.Id+'/course/info']">{{course.Title}}</a>
 
           <hr>
         </h1>
       </div>
       <p class="course__description">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis iste qui excepturi veniam ipsa unde accusantium quod
-        aliquid, libero consectetur.
+       {{course.Description}}
       </p>
     </div>
       <router-outlet></router-outlet>
-      <!--<peer-review-course-page></peer-review-course-page>-->
-
   </section>
 </main>

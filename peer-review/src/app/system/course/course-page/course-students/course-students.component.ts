@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {CourseModel} from '../../../../common/models/course.model';
+import {CourseDataService} from '../course-data.service';
 
 @Component({
   selector: 'peer-review-course-students',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./course-students.component.scss']
 })
 export class CourseStudentsComponent implements OnInit {
+  course: CourseModel;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private courseDataService: CourseDataService) {
   }
 
+  ngOnInit() {
+    this.course = this.courseDataService.getCourse();
+    console.log(this.course);
+  }
 }

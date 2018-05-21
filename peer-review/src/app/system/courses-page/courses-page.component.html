@@ -6,7 +6,7 @@
       <li class="courses__list--item" *ngFor="let course of courses">
         <div class="card">
           <div class="card-body">
-            <a class="card--link" [routerLink]="['/'+course.Id+'/course/info']">
+            <a class="card--link" [routerLink]="['/'+course.Id]">
               <h5 class="card-title">{{course.Title}}</h5>
               <p class="card-text">{{course.Description}}</p>
             </a>
