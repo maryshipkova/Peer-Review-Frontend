@@ -18,6 +18,7 @@ import {TaskPageComponent} from './task/task-page/task-page.component';
 import {TaskAddComponent} from './course-page/task-add/task-add.component';
 import {CriteriaAddComponent} from './task/task-page/criteria-add/criteria-add.component';
 import {CourseInviteComponent} from './course-page/course-invite/course-invite.component';
+import {ReviewPageComponent} from './solution-page/review-page/review-page.component';
 
 
 const routes: Routes = [
@@ -25,11 +26,10 @@ const routes: Routes = [
     path: '', component: SystemComponent,
     children: [
       {
-        path: ':courseid', component: CourseComponent,
+        path: 'system/:courseid', component: CourseComponent,
         children: [
           {
             path: 'course', component: CoursePageComponent, children: [
-
               {path: 'info', component: CourseInfoComponent},
               {path: 'students', component: CourseStudentsComponent},
               {path: 'tasks', component: CourseTasksComponent},
@@ -47,12 +47,17 @@ const routes: Routes = [
                   {path: 'solutions', component: TaskSolutionsComponent},
                   {path: 'add-solution', component: SolutionAddComponent}
                   // {path: 'add-criteria', component: CriteriaAddComponent}
-                ]},
+                ]
+              },
               {
                 path: ':solutionid', component: SolutionPageComponent,
                 children: [
                   {path: 'info', component: SolutionInfoComponent},
-                  {path: 'reviews', component: SolutionReviewsComponent},
+                  {
+                    path: 'reviews', component: SolutionReviewsComponent, children: [
+                      {path: ':reviewid', component: ReviewPageComponent},
+                    ]
+                  },
                   {path: 'add', component: ReviewAddComponent}
                 ]
               }

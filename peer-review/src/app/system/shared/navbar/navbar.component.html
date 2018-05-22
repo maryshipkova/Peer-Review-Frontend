@@ -16,13 +16,14 @@
         <a class="nav-link" [routerLink]="['/create-course']">Create course</a>
       </li>
     </ul>
-    <div class="nav-item dropdown">
+    <div class="nav-item" *ngIf="!token"><a [routerLink]="['/auth/login']">Login</a></div>
+    <div class="nav-item dropdown" *ngIf="token">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
          aria-expanded="false">
-        %Username
+        username
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="#">Exit</a>
+        <a class="dropdown-item" [routerLink]="['/auth/logout']">Exit</a>
       </div>
     </div>
   </div>

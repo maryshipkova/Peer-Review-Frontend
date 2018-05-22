@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {Api} from '../../../common/core/api';
 import {CourseModel} from '../../../common/models/course.model';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs/index';
 
 @Injectable()
 export class CourseService extends Api {
@@ -14,12 +14,8 @@ export class CourseService extends Api {
 
   createCourse(course: CourseModel)
     : Observable<CourseModel> {
-    this.params = new HttpParams({
-        fromObject: JSON.parse(JSON.stringify(course))
-      }
-    );
 
-    return this.post(`Course`, this.params);
+    return this.post(`Course`, course);
   }
 
   getCourseById(courseId: string): Observable<CourseModel> {

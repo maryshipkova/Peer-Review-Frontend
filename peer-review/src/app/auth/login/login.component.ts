@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService: AuthService,private router: Router) {
+  constructor(private authService: AuthService, private router: Router) {
   }
 
   ngOnInit() {
@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     const {login, password} = form.value;
-    // console.log(login, password);
+
     this.authService.signIn(login, password).subscribe(data => {
       window.localStorage.setItem('token', data.TokenData);
       window.localStorage.setItem('userId', data.UserId);

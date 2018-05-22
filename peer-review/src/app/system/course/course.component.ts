@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {Subscription} from 'rxjs/Subscription';
+
 import {CourseService} from '../shared/services/course.service';
 import {CourseDataService} from './course-page/course-data.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {CourseModel} from '../../common/models/course.model';
+import {Subscription} from 'rxjs/index';
 
 @Component({
   selector: 'peer-review-course',

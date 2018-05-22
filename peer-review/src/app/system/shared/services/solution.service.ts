@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Api} from '../../../common/core/api';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs/index';
 import {TaskModel} from '../../../common/models/task.model';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {SolutionModel} from '../../../common/models/solution.model';
@@ -13,12 +13,9 @@ export class SolutionService extends Api {
   }
 
   createSolution(solution: SolutionModel): Observable<SolutionModel> {
-    this.params = new HttpParams({
-        fromObject: JSON.parse(JSON.stringify(solution))
-      }
-    );
 
-    return this.post(`Solution`, this.params);
+
+    return this.post(`Solution`, solution);
   }
 
   getSolutionById(solutionId: string): Observable<SolutionModel> {

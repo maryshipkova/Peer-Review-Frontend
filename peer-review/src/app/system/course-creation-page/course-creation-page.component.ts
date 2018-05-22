@@ -1,10 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
-import {Subscription} from 'rxjs/Subscription';
-import {Observable} from 'rxjs/Observable';
+import {Subscription} from 'rxjs/index';
 import {CourseService} from '../shared/services/course.service';
 import {UserService} from '../../common/services/user.service';
-import 'rxjs/add/operator/combineLatest';
 import {UserModel} from '../../common/models/user.model';
 import {CourseModel} from '../../common/models/course.model';
 

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs/index';
 import {SolutionService} from '../../../../shared/services/solution.service';
 import {TaskDataService} from '../../task-data.service';
 import {SolutionModel} from '../../../../../common/models/solution.model';

@@ -1,49 +1,49 @@
 <div class="course-content__fragment--element">
   <h3 class="heading-tertiary display-4">Create new Review</h3>
   <hr>
+  <form #reviewForm="ngForm" (ngSubmit)="onSubmit(reviewForm)">
 
+    <div class="course-content__fragment--element">
+      <h3 class="heading-tertiary display-4">Criteria</h3>
 
-  <div class="course-content__fragment--element">
-    <h3 class="heading-tertiary display-4">Criteria</h3>
+      <div class="criteria">
+        <table class="table criteria__table">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Max score</th>
 
-    <div class="criteria">
-      <table class="table criteria__table">
-        <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Name</th>
-          <th scope="col">Max score</th>
-
-        </tr>
-        </thead>
-        <tbody>
-        <form class="form" #reviewForm="ngForm" (ngSubmit)="onSubmit(reviewForm)">
+          </tr>
+          </thead>
+          <tbody>
           <tr *ngFor="let c of criteria; let num = index">
 
-            <th scope="row">{{num}}</th>
+            <th scope="row">{{num+1}}</th>
             <td>
               {{c.Title}}
+            </td>
             <td>
               <input type="number"
                      class="form-control"
                      placeholder="1"
-                     name="max-point-{{num}}"
+                     name="point-{{num}}"
                      ngModel
                      min="1"
                      max="{{c.MaxPoint}}"
               >
             </td>
           </tr>
-          </form>
+
           </tbody>
         </table>
       </div>
     </div>
 
-    <button type="submit"
-            class="btn btn-outline-primary"
-            [disabled]="reviewForm.invalid"
-    >Submit
-    </button>
-
+  <button type="submit"
+          class="btn btn-outline-primary"
+          [disabled]="reviewForm.invalid"
+  >Submit
+  </button>
+  </form>
 </div>

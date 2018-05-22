@@ -7,8 +7,7 @@ import { AppComponent } from './app.component';
 import {SystemModule} from './system/system.module';
 import {AuthModule} from './auth/auth.module';
 import {HttpClientJsonpModule, HttpClientModule} from '@angular/common/http';
-import {UserService} from './common/services/user.service';
-import {AuthService} from './common/services/auth.service';
+
 
 
 @NgModule({

@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, ParamMap, Params, Router} from '@angular/router';
-import {CourseDataService} from './course-data.service';
+
 
 @Component({
   selector: 'peer-review-course-page',

@@ -3,13 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 import {AuthComponent} from './auth.component';
 import {SignUpComponent} from './sign-up/sign-up.component';
 import {LoginComponent} from './login/login.component';
+import {LogoutComponent} from './logout/logout.component';
 
 const routes: Routes = [
   {
-    path: '', component: AuthComponent,
+    path: 'auth', component: AuthComponent,
     children: [
       {path: 'login', component: LoginComponent},
-      {path: 'signup', component: SignUpComponent}
+      {path: 'signup', component: SignUpComponent},
+      {path: 'logout', component: LogoutComponent}
     ]
   }
 ];

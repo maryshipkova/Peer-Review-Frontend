@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs/index';
 import {Api} from '../../../common/core/api';
 import {TaskModel} from '../../../common/models/task.model';
 
@@ -13,20 +13,7 @@ export class TaskService extends Api {
 
   createTask(task: TaskModel)
     : Observable<TaskModel> {
-    this.params = new HttpParams({
-        fromObject: {
-          Title: task.Title,
-          Description: task.Description,
-          CourseId: task.CourseId,
-          Posted: task.Posted.toDateString(),
-          CriteriaCollection: JSON.parse(JSON.stringify(task.CriteriaCollection)),
-          Id: null
-        }
-
-      }
-    );
-    console.log( this.params);
-    return this.post(`tasks/Add`, this.params );
+    return this.post(`tasks/Add`, task);
   }
 
   getTaskById(taskId: string): Observable<TaskModel> {

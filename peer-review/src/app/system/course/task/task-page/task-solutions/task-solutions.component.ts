@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs/index';
 import {TaskModel} from '../../../../../common/models/task.model';
 import {SolutionModel} from '../../../../../common/models/solution.model';
 import {TaskDataService} from '../../task-data.service';

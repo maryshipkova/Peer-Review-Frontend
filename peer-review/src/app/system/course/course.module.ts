@@ -23,6 +23,7 @@ import {CourseInviteComponent} from './course-page/course-invite/course-invite.c
 import {CourseDataService} from './course-page/course-data.service';
 import {TaskDataService} from './task/task-data.service';
 import {SolutionDataService} from './solution-page/solution-data.service';
+import { ReviewPageComponent } from './solution-page/review-page/review-page.component';
 
 @NgModule({
   imports: [
@@ -48,7 +49,8 @@ import {SolutionDataService} from './solution-page/solution-data.service';
     TaskComponent,
     TaskAddComponent,
     CriteriaAddComponent,
-    CourseInviteComponent
+    CourseInviteComponent,
+    ReviewPageComponent
   ], providers: [CourseDataService, TaskDataService, SolutionDataService]
 })
 

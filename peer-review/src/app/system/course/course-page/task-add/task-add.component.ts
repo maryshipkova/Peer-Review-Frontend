@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs/index';
 import {TaskService} from '../../../shared/services/task.service';
 import {TaskModel} from '../../../../common/models/task.model';
 import {CourseModel} from '../../../../common/models/course.model';

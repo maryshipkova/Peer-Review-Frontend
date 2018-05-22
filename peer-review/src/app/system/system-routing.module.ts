@@ -6,8 +6,7 @@ import {CoursesPageComponent} from './courses-page/courses-page.component';
 import {InvitationsPageComponent} from './invitations-page/invitations-page.component';
 import {CourseComponent} from './course/course.component';
 import {SolutionPageComponent} from './course/solution-page/solution-page.component';
-import {CoursePageComponent} from './course/course-page/course-page.component';
-import {CourseInviteComponent} from './course/course-page/course-invite/course-invite.component';
+
 import {CourseCreationPageComponent} from './course-creation-page/course-creation-page.component';
 
 const routes: Routes = [
@@ -17,7 +16,6 @@ const routes: Routes = [
       {path: 'home', component: HomePageComponent},
       {path: 'courses', component: CoursesPageComponent},
       {path: 'invitations', component: InvitationsPageComponent},
-      {path: ':courseid', component: CourseComponent},
       {path: 'solution', component: SolutionPageComponent},
       {path: 'create-course', component: CourseCreationPageComponent}
     ]

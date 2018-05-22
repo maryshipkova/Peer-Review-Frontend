@@ -7,7 +7,7 @@ import {SignUpComponent} from './sign-up/sign-up.component';
 import {LoginComponent} from './login/login.component';
 import {UserService} from '../common/services/user.service';
 import {AuthService} from '../common/services/auth.service';
-import {HttpClientJsonpModule} from '@angular/common/http';
+import {LogoutComponent} from './logout/logout.component';
 
 @NgModule({
   imports: [
@@ -18,7 +18,8 @@ import {HttpClientJsonpModule} from '@angular/common/http';
   declarations: [
     AuthComponent,
     SignUpComponent,
-    LoginComponent
+    LoginComponent,
+    LogoutComponent
   ],
   providers: [UserService, AuthService]
 })

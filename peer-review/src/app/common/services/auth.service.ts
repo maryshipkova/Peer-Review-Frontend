@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {Api} from '../core/api';
-import {UserModel} from '../models/user.model';
+
 
 @Injectable()
 export class AuthService extends Api {
@@ -23,11 +23,11 @@ export class AuthService extends Api {
     );
   }
 
-  signOut(token: string, userId: string) {
+  signOut() {
     this.params = new HttpParams({
       fromObject: {
-        token: token,
-        userId: userId
+        token: this.TokenData,
+        userId: this.UserId
       }
     });
     return this.post(`users/Sign-out`, {
@@ -37,12 +37,10 @@ export class AuthService extends Api {
   }
 
   signIn(login: string, password: string) {
-
-    // test
-    this.params = new HttpParams({fromObject: {
+    return this.postWithoutParams(`users/Sign-in`,
+      {
         'Login': '5MZBV8HOJ9JFBJV',
         'Password': 'T7S5T0MRMO07OQL'
-      }});
-    return this.post(`users/Sign-in`, this.params);
+      });
   }
 }

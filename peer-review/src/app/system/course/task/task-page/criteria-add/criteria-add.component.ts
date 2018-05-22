@@ -1,9 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
-import {TaskModel} from '../../../../../common/models/task.model';
 import {TaskDataService} from '../../task-data.service';
 import {CriteriaModel} from '../../../../../common/models/criteria.model';
-import {SolutionModel} from '../../../../../common/models/solution.model';
 
 @Component({
   selector: 'peer-review-criteria-add',
@@ -17,7 +15,7 @@ export class CriteriaAddComponent implements OnInit {
   }
 
   ngOnInit() {
-    const task = this.taskDataService.getTask();
+    // const task = this.taskDataService.getTask();
   }
 
   onSubmit(form: NgForm) {

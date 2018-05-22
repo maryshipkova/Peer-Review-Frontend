@@ -1,64 +1,64 @@
 
-<!--criteria table-->
-<div class="course-content__fragment--element">
-  <h3 class="heading-tertiary display-4">Criteria</h3>
+<!--&lt;!&ndash;criteria table&ndash;&gt;-->
+<!--<div class="course-content__fragment&#45;&#45;element">-->
+  <!--<h3 class="heading-tertiary display-4">Criteria</h3>-->
 
-  <div class="criteria">
-    <table class="table criteria__table">
-      <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Max score</th>
+  <!--<div class="criteria">-->
+    <!--<table class="table criteria__table">-->
+      <!--<thead>-->
+      <!--<tr>-->
+        <!--<th scope="col">#</th>-->
+        <!--<th scope="col">Name</th>-->
+        <!--<th scope="col">Max score</th>-->
 
-      </tr>
-      </thead>
-      <tbody>
+      <!--</tr>-->
+      <!--</thead>-->
+      <!--<tbody>-->
 
-      <tr  *ngFor="let criteria of task.CriteriaCollection">
-        <th scope="row">1</th>
-        <td>{{criteria.Title}}</td>
-        <td>{{criteria.MaxPoint}}</td>
-      </tr>
+      <!--<tr  *ngFor="let criteria of task.CriteriaCollection">-->
+        <!--<th scope="row">1</th>-->
+        <!--<td>{{criteria.Title}}</td>-->
+        <!--<td>{{criteria.MaxPoint}}</td>-->
+      <!--</tr>-->
 
-      </tbody>
-    </table>
-  </div>
-</div>
+      <!--</tbody>-->
+    <!--</table>-->
+  <!--</div>-->
+<!--</div>-->
 
-<!--/criteria table-->
+<!--&lt;!&ndash;/criteria table&ndash;&gt;-->
 
-<div class="course-content__fragment--element">
-  <h3 class="heading-tertiary display-4">Add new criteria</h3>
-  <hr>
+<!--<div class="course-content__fragment&#45;&#45;element">-->
+  <!--<h3 class="heading-tertiary display-4">Add new criteria</h3>-->
+  <!--<hr>-->
 
-  <form class="form form__criteria" #solutionForm="ngForm" (ngSubmit)="onSubmit(solutionForm)">
-      <div class="form-group form__criteria--name">
+  <!--<form class="form form__criteria" #solutionForm="ngForm" (ngSubmit)="onSubmit(solutionForm)">-->
+      <!--<div class="form-group form__criteria&#45;&#45;name">-->
 
-        <label for="solution-title">Name</label>
-        <input type="text"
-               class="form-control"
-               id="solution-title" placeholder="Criteria name"
-               required
-               name="name"
-               ngModel
-        >
-      </div>
-      <div class="form-group form__criteria--value">
-        <label for="solution-text">Max value</label>
-        <input type="number"
-               class="form-control"
-               id="solution-text"
-               placeholder=""
-               required
-               name="max-value"
-               ngModel
-        >
-      </div>
-    <button type="submit"
-            class="btn btn-outline-success form__criteria--button"
-            [disabled]="solutionForm.invalid"
-    >+
-    </button>
-  </form>
-</div>
+        <!--<label for="solution-title">Name</label>-->
+        <!--<input type="text"-->
+               <!--class="form-control"-->
+               <!--id="solution-title" placeholder="Criteria name"-->
+               <!--required-->
+               <!--name="name"-->
+               <!--ngModel-->
+        <!--&gt;-->
+      <!--</div>-->
+      <!--<div class="form-group form__criteria&#45;&#45;value">-->
+        <!--<label for="solution-text">Max value</label>-->
+        <!--<input type="number"-->
+               <!--class="form-control"-->
+               <!--id="solution-text"-->
+               <!--placeholder=""-->
+               <!--required-->
+               <!--name="max-value"-->
+               <!--ngModel-->
+        <!--&gt;-->
+      <!--</div>-->
+    <!--<button type="submit"-->
+            <!--class="btn btn-outline-success form__criteria&#45;&#45;button"-->
+            <!--[disabled]="solutionForm.invalid"-->
+    <!--&gt;+-->
+    <!--</button>-->
+  <!--</form>-->
+<!--</div>-->

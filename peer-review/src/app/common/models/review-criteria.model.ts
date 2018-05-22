@@ -1,10 +1,9 @@
-
 export class ReviewCriteriaModel {
   constructor(
-    public reviewId: number,
-    public criteriaId: number,
-    public rating: number,
-    public description: string
+    public Description: string,
+    public Rating: number,
+    public CriteriaId: string,
+    public ReviewId?: string,
   ) {
   }
 }

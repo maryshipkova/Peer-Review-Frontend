@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs/index';
 import {ActivatedRoute, Router} from '@angular/router';
 import {SolutionService} from '../../shared/services/solution.service';
 import {SolutionDataService} from './solution-data.service';
@@ -36,9 +36,7 @@ export class SolutionPageComponent implements OnInit {
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       if (!this.solution && params['solutionid']) { // if route is active
-        console.log('solutionid', params['solutionid']);
         this.solutionService.getSolutionById(params['solutionid']).subscribe(data => {
-          // console.log(data);
           this.solution = data;
           this.solutionDataService.setSolution(data);
           this.router.navigate(['./info'], {relativeTo: this.route});
