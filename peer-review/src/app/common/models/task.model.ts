@@ -2,10 +2,10 @@ import {CriteriaModel} from './criteria.model';
 
 export class TaskModel {
   constructor(
-    public title: string,
-    public description: string,
-    public courseId: string,
-    public posted: Date,
+    public Title: string,
+    public Description: string,
+    public CourseId: string,
+    public Posted: Date,
     public TaskId?: string,
     public CriteriaCollection?: CriteriaModel[]
   ) {

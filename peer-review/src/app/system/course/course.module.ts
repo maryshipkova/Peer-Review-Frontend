@@ -20,8 +20,8 @@ import {TaskAddComponent} from './course-page/task-add/task-add.component';
 import {FormsModule} from '@angular/forms';
 import {CriteriaAddComponent} from './task/task-page/criteria-add/criteria-add.component';
 import {CourseInviteComponent} from './course-page/course-invite/course-invite.component';
-import {CriteriaComponent} from './criteria/criteria.component';
 import {CourseDataService} from './course-page/course-data.service';
+import {TaskDataService} from './task/task-data.service';
 
 @NgModule({
   imports: [
@@ -47,9 +47,8 @@ import {CourseDataService} from './course-page/course-data.service';
     TaskComponent,
     TaskAddComponent,
     CriteriaAddComponent,
-    CourseInviteComponent,
-    CriteriaComponent
-  ], providers: [CourseDataService]
+    CourseInviteComponent
+  ], providers: [CourseDataService, TaskDataService]
 })
 
 export class CourseModule {

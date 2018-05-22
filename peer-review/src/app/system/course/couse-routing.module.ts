@@ -25,7 +25,7 @@ const routes: Routes = [
     path: '', component: SystemComponent,
     children: [
       {
-        path: ':id', component: CourseComponent,
+        path: ':courseid', component: CourseComponent,
         children: [
           {
             path: 'course', component: CoursePageComponent, children: [
@@ -38,7 +38,7 @@ const routes: Routes = [
             ],
           },
           {
-            path: 'taskid', component: TaskComponent,
+            path: ':taskid', component: TaskComponent,
             children: [
               {
                 path: 'task', component: TaskPageComponent,
@@ -49,7 +49,7 @@ const routes: Routes = [
                   {path: 'add-criteria', component: CriteriaAddComponent}
                 ]},
               {
-                path: 'solutionid', component: SolutionPageComponent,
+                path: ':solutionid', component: SolutionPageComponent,
                 children: [
                   {path: 'info', component: SolutionInfoComponent},
                   {path: 'reviews', component: SolutionReviewsComponent},

@@ -22,8 +22,8 @@ export class CourseComponent implements OnInit {
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-      if (params['id']) { // if route is active
-        this.courseService.getCourseById(params['id']).subscribe(data => {
+      if ( !this.course && params['courseid']) { // if route is active
+        this.courseService.getCourseById(params['courseid']).subscribe(data => {
           this.course = data;
           this.courseDataService.setCourse(data);
           this.router.navigate(['./course/info'], {relativeTo: this.route});

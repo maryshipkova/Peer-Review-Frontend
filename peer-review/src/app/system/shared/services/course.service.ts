@@ -23,12 +23,10 @@ export class CourseService extends Api {
   }
 
   getCourseById(courseId: string): Observable<CourseModel> {
-    console.log('id', courseId);
     return this.get(`courses/GetById/${courseId}?TokenData=${this.TokenData}&UserId=${this.UserId}`);
   }
 
   getCourseListByUser(): Observable<CourseModel[]> {
-
     return this.get(`courses/GetByUser?TokenData=${this.TokenData}&UserId=${this.UserId}`);
   }
 

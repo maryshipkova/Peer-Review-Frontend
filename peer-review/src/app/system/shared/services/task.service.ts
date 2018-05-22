@@ -22,11 +22,11 @@ export class TaskService extends Api {
   }
 
   getTaskById(taskId: string): Observable<TaskModel> {
+    console.log(taskId);
     return this.get(`tasks/GetById/${taskId}?TokenData=${this.TokenData}&UserId=${this.UserId}`);
   }
 
   getTaskListByCourse(courseId: string): Observable<TaskModel[]> {
-
     return this.get(`tasks/GetByCourse/${courseId}?TokenData=${this.TokenData}&UserId=${this.UserId}`);
   }
 

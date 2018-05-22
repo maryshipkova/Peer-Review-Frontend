@@ -1,12 +1,12 @@
 
 export class SolutionModel {
   constructor(
-    public solutionId: number,
-    public authorId: number,
-    public taskId: number,
-    public textData: string,
-    public posted: Date,
-    public status: boolean
+    public TextData: string,
+    public AuthorId: string,
+    public TaskId: string,
+    public Posted: Date,
+    public Status: boolean,
+    public SolutionId?: string,
   ) {
   }
 }
