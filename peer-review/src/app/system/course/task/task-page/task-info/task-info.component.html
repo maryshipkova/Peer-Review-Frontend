@@ -1,4 +1,10 @@
+<div class="course-content__fragment--element">
+  <h3 class="heading-tertiary display-4">{{task.Title}}</h3>
+  <hr>
+  <p>{{task.Description}}</p>
+</div>
 
+<!--criteria table-->
 <div class="course-content__fragment--element">
   <h3 class="heading-tertiary display-4">Criteria</h3>
 
@@ -13,19 +19,16 @@
       </tr>
       </thead>
       <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Fun</td>
-        <td>10</td>
 
+      <tr  *ngFor="let criteria of task.CriteriaCollection">
+      <th scope="row">1</th>
+        <td>{{criteria.Title}}</td>
+        <td>{{criteria.MaxPoint}}</td>
       </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Cats</td>
-        <td>5</td>
 
-      </tr>
       </tbody>
     </table>
   </div>
 </div>
+
+<!--/criteria table-->

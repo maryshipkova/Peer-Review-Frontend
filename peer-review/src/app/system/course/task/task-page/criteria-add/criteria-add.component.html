@@ -1,4 +1,33 @@
-<peer-review-criteria></peer-review-criteria>
+
+<!--criteria table-->
+<div class="course-content__fragment--element">
+  <h3 class="heading-tertiary display-4">Criteria</h3>
+
+  <div class="criteria">
+    <table class="table criteria__table">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Max score</th>
+
+      </tr>
+      </thead>
+      <tbody>
+
+      <tr  *ngFor="let criteria of task.CriteriaCollection">
+        <th scope="row">1</th>
+        <td>{{criteria.Title}}</td>
+        <td>{{criteria.MaxPoint}}</td>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!--/criteria table-->
+
 <div class="course-content__fragment--element">
   <h3 class="heading-tertiary display-4">Add new criteria</h3>
   <hr>
