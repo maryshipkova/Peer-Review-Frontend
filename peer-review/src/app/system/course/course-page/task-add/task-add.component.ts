@@ -5,6 +5,7 @@ import {TaskService} from '../../../shared/services/task.service';
 import {TaskModel} from '../../../../common/models/task.model';
 import {CourseModel} from '../../../../common/models/course.model';
 import {CourseDataService} from '../course-data.service';
+import {CriteriaModel} from '../../../../common/models/criteria.model';
 
 @Component({
   selector: 'peer-review-task-add',
@@ -12,6 +13,7 @@ import {CourseDataService} from '../course-data.service';
   styleUrls: ['./task-add.component.scss']
 })
 export class TaskAddComponent implements OnInit, OnDestroy {
+  numbers = [1, 2, 3, 4, 5];
   sub: Subscription;
   courseId: string;
 
@@ -25,8 +27,18 @@ export class TaskAddComponent implements OnInit, OnDestroy {
 
   onSubmit(form: NgForm) {
     const {title, description} = form.value;
-    const task = new TaskModel(title, description, this.courseId, new Date());
-    this.sub = this.taskService.createTask(task).subscribe(data => console.log(data));
+    let criterias: CriteriaModel[] = [];
+    for (const param in form.value) {
+      // console.log(i);
+      if (param.includes('criteria') && form.value[param]) {
+        const num = param[param.length - 1];
+        const maxPoint = form.value[`max-point-${num}`];
+        criterias.push(new CriteriaModel(form.value[param], !maxPoint ? 10 : maxPoint));
+      }
+    }
+    const task = new TaskModel(title, description, this.courseId, new Date(), criterias);
+    console.log('task', task);
+    this.sub = this.taskService.createTask(task).subscribe(data => console.log('response', data));
 
   }
 

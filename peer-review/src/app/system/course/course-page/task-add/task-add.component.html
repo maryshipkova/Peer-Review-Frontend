@@ -25,6 +25,48 @@
              ngModel
       >
     </div>
+
+
+
+      <div class="course-content__fragment--element">
+        <h3 class="heading-tertiary display-4">Criteria</h3>
+
+        <div class="criteria">
+          <table class="table criteria__table">
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Max score</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let num of numbers">
+
+              <th scope="row">{{num}}</th>
+              <td>
+                <input type="text"
+                       class="form-control"
+                       placeholder="Criteria name"
+                       name="criteria-{{num}}"
+                       ngModel
+                >
+              </td>
+              <td>
+                <input type="number"
+                       class="form-control"
+                       placeholder="10"
+                       name="max-point-{{num}}"
+                       ngModel
+                >
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
     <button type="submit"
             class="btn btn-outline-primary"
             [disabled]="taskForm.invalid"

@@ -30,7 +30,7 @@ export class Api {
   }
 
   private getUrl(url: string = ''): string {
-    return this.baseUrl + url;
+    return this.baseUrl + url + `?TokenData=${this.TokenData}&UserId=${this.UserId}`;
   }
 
   public get(url: string = ''): Observable<any> {
@@ -38,7 +38,7 @@ export class Api {
   }
 
   public post(url: string = '', data: any = {}): Observable<any> {
-    console.log(data);
+    // console.log(data);
     return this.http.post(this.getUrl(url), data); // .subscribe(data => console.log(data));
   }
 

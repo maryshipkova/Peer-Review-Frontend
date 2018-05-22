@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {SolutionModel} from '../../../../common/models/solution.model';
+import {SolutionDataService} from '../solution-data.service';
+import {ReviewModel} from '../../../../common/models/review.model';
 
 @Component({
   selector: 'peer-review-solution-reviews',
@@ -6,10 +9,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./solution-reviews.component.scss']
 })
 export class SolutionReviewsComponent implements OnInit {
+  solution: SolutionModel;
+  reviews: ReviewModel[];
 
-  constructor() { }
+
+  constructor(private solutionDataService: SolutionDataService) {
+  }
 
   ngOnInit() {
+    this.solution = this.solutionDataService.getSolution();
   }
 
 }

@@ -17,17 +17,18 @@ export class TaskService extends Api {
         fromObject: JSON.parse(JSON.stringify(task))
       }
     );
-
-    return this.post(`tasks/Add?TokenData=${this.TokenData}&UserId=${this.UserId}`, this.params);
+    // console.log('params', this.params.toString());
+    console.log('json', task);
+    return this.post(`tasks/Add`, this.params);
   }
 
   getTaskById(taskId: string): Observable<TaskModel> {
     console.log(taskId);
-    return this.get(`tasks/GetById/${taskId}?TokenData=${this.TokenData}&UserId=${this.UserId}`);
+    return this.get(`tasks/GetById/${taskId}`);
   }
 
   getTaskListByCourse(courseId: string): Observable<TaskModel[]> {
-    return this.get(`tasks/GetByCourse/${courseId}?TokenData=${this.TokenData}&UserId=${this.UserId}`);
+    return this.get(`tasks/GetByCourse/${courseId}`);
   }
 
 }

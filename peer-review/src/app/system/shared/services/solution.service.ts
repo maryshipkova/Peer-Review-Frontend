@@ -18,18 +18,18 @@ export class SolutionService extends Api {
       }
     );
 
-    return this.post(`Solution?TokenData=${this.TokenData}&UserId=${this.UserId}`, this.params);
+    return this.post(`Solution`, this.params);
   }
 
   getSolutionById(solutionId: string): Observable<SolutionModel> {
-    return this.get(`solutions/${solutionId}?TokenData=${this.TokenData}&UserId=${this.UserId}`);
+    return this.get(`solutions/${solutionId}`);
   }
 
   getSolutionListByTask(taskId: string): Observable<SolutionModel[]> {
-    return this.get(`solutions/GetByTask/${taskId}?TokenData=${this.TokenData}&UserId=${this.UserId}`);
+    return this.get(`solutions/GetByTask/${taskId}`);
   }
 
   resolveSolution(solutionId: string): Observable<SolutionModel> {
-    return this.post(`solutions/Resolve-solution/${solutionId}?TokenData=${this.TokenData}&UserId=${this.UserId}`);
+    return this.post(`solutions/Resolve-solution/${solutionId}`);
   }
 }

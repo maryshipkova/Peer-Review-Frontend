@@ -6,7 +6,7 @@ export class SolutionModel {
     public TaskId: string,
     public Posted: Date,
     public Status: boolean,
-    public SolutionId?: string,
+    public Id?: string,
   ) {
   }
 }

@@ -2,33 +2,33 @@
   <h3 class="heading-tertiary display-4">Create new Review</h3>
   <hr>
 
-  <!--<form class="form" #taskForm="ngForm" (ngSubmit)="onSubmit(taskForm)">-->
-    <!--<div class="form-group">-->
-      <!--&lt;!&ndash;[ngClass]="{'has-error': name.invalid && name.touched}"&ndash;&gt;-->
+  <form class="form" #reviewForm="ngForm" (ngSubmit)="onSubmit(reviewForm)">
+    <div class="form-group">
+      <!--[ngClass]="{'has-error': name.invalid && name.touched}"-->
 
-      <!--<label for="task-title">Task title</label>-->
-      <!--<input type="text"-->
-             <!--class="form-control"-->
-             <!--id="task-title" placeholder="Task title"-->
-             <!--required-->
-             <!--name="title"-->
-             <!--ngModel-->
-      <!--&gt;-->
-    <!--</div>-->
-    <!--<div class="form-group">-->
-      <!--<label for="task-description">Task description</label>-->
-      <!--<input type="text"-->
-             <!--class="form-control"-->
-             <!--id="task-description"-->
-             <!--placeholder="Description"-->
-             <!--name="description"-->
-             <!--ngModel-->
-      <!--&gt;-->
-    <!--</div>-->
-    <!--<button type="submit"-->
-            <!--class="btn btn-outline-primary"-->
-            <!--[disabled]="taskForm.invalid"-->
-    <!--&gt;Submit-->
-    <!--</button>-->
-  <!--</form>-->
+      <label for="task-title">Task title</label>
+      <input type="text"
+             class="form-control"
+             id="task-title" placeholder="Task title"
+             required
+             name="title"
+             ngModel
+      >
+    </div>
+    <div class="form-group">
+      <label for="task-description">Task description</label>
+      <input type="text"
+             class="form-control"
+             id="task-description"
+             placeholder="Description"
+             name="description"
+             ngModel
+      >
+    </div>
+    <button type="submit"
+            class="btn btn-outline-primary"
+            [disabled]="taskForm.invalid"
+    >Submit
+    </button>
+  </form>
 </div>

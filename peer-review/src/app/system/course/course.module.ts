@@ -49,7 +49,7 @@ import {SolutionDataService} from './solution-page/solution-data.service';
     TaskAddComponent,
     CriteriaAddComponent,
     CourseInviteComponent
-  ], providers: [CourseDataService, TaskDataService,SolutionDataService]
+  ], providers: [CourseDataService, TaskDataService, SolutionDataService]
 })
 
 export class CourseModule {

@@ -45,8 +45,8 @@ const routes: Routes = [
                 children: [
                   {path: 'info', component: TaskInfoComponent},
                   {path: 'solutions', component: TaskSolutionsComponent},
-                  {path: 'add-solution', component: SolutionAddComponent},
-                  {path: 'add-criteria', component: CriteriaAddComponent}
+                  {path: 'add-solution', component: SolutionAddComponent}
+                  // {path: 'add-criteria', component: CriteriaAddComponent}
                 ]},
               {
                 path: ':solutionid', component: SolutionPageComponent,

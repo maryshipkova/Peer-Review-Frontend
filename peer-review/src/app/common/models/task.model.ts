@@ -6,8 +6,8 @@ export class TaskModel {
     public Description: string,
     public CourseId: string,
     public Posted: Date,
-    public TaskId?: string,
-    public CriteriaCollection?: CriteriaModel[]
+    public CriteriaCollection: CriteriaModel[],
+    public Id?: string
   ) {
   }
 }

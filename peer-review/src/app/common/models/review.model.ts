@@ -1,10 +1,12 @@
+import {CriteriaModel} from './criteria.model';
 
 export class ReviewModel {
   constructor(
-    public reviewId: number,
-    public authorId: number,
-    public solutionId: number,
-    public posted: Date,
+    public Id: number,
+    public AuthorId: number,
+    public SolutionId: number,
+    public PostTime: Date,
+    public RateCollection: CriteriaModel[]
   ) {
   }
 }

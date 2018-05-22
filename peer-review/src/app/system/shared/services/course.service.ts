@@ -19,15 +19,15 @@ export class CourseService extends Api {
       }
     );
 
-    return this.post(`Course?TokenData=${this.TokenData}&UserId=${this.UserId}`, this.params);
+    return this.post(`Course`, this.params);
   }
 
   getCourseById(courseId: string): Observable<CourseModel> {
-    return this.get(`courses/GetById/${courseId}?TokenData=${this.TokenData}&UserId=${this.UserId}`);
+    return this.get(`courses/GetById/${courseId}`);
   }
 
   getCourseListByUser(): Observable<CourseModel[]> {
-    return this.get(`courses/GetByUser?TokenData=${this.TokenData}&UserId=${this.UserId}`);
+    return this.get(`courses/GetByUser`);
   }
 
   inviteUser(userId: string, token: string, courseId: number): Observable<CourseModel> {

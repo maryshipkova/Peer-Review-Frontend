@@ -18,11 +18,11 @@ export class TaskPageComponent implements OnInit {
     {
       'title': 'Add solution',
       'route': 'add-solution'
-    },
-    {
-      'title': 'Add criteria',
-      'route': 'add-criteria'
     }
+    // {
+    //   'title': 'Add criteria',
+    //   'route': 'add-criteria'
+    // }
   ];
   constructor() { }
 

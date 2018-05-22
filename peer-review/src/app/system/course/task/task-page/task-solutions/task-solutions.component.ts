@@ -22,7 +22,7 @@ export class TaskSolutionsComponent implements OnInit {
 
   ngOnInit() {
     this.task = this.taskDataService.getTask();
-    this.sub = this.solutionService.getSolutionListByTask(this.task.TaskId).subscribe(data => {
+    this.sub = this.solutionService.getSolutionListByTask(this.task.Id).subscribe(data => {
       this.solutions = data;
       this.isLoaded = true;
     });
