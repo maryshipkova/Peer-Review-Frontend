@@ -1,6 +1,47 @@
 <div class="course-content__fragment--element">
   <h3 class="heading-tertiary display-4">Reviews</h3>
   <hr>
-  <div *ngFor="let review of reviews"></div>
-  <p>text</p>
+  <div *ngIf="!isLoaded">loading</div>
+  <div *ngIf="isLoaded">
+  <div  *ngFor="let review of reviews" >
+    <p>{{review | json}}</p>
+
+    <!--<div class="course-content__fragment&#45;&#45;element">-->
+      <!--<h3 class="heading-tertiary display-4">Criteria</h3>-->
+
+      <!--<div class="criteria">-->
+        <!--<table class="table criteria__table">-->
+          <!--<thead>-->
+          <!--<tr>-->
+            <!--<th scope="col">#</th>-->
+            <!--<th scope="col">Name</th>-->
+            <!--<th scope="col">Max score</th>-->
+
+          <!--</tr>-->
+          <!--</thead>-->
+          <!--<tbody>-->
+          <!--<form class="form" #reviewForm="ngForm" (ngSubmit)="onSubmit(reviewForm)">-->
+            <!--<tr *ngFor="let c of criteria; let num = index">-->
+
+              <!--<th scope="row">{{num}}</th>-->
+              <!--<td>-->
+                <!--{{c.Title}}-->
+              <!--<td>-->
+                <!--<input type="number"-->
+                       <!--class="form-control"-->
+                       <!--placeholder="1"-->
+                       <!--name="max-point-{{num}}"-->
+                       <!--ngModel-->
+                       <!--min="1"-->
+                       <!--max="{{c.MaxPoint}}"-->
+                <!--&gt;-->
+              <!--</td>-->
+            <!--</tr>-->
+          <!--</form>-->
+          <!--</tbody>-->
+        <!--</table>-->
+      <!--</div>-->
+    <!--</div>-->
+  </div>
+  </div>
 </div>

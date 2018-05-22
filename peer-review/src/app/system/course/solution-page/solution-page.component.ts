@@ -36,11 +36,12 @@ export class SolutionPageComponent implements OnInit {
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       if (!this.solution && params['solutionid']) { // if route is active
+        console.log('solutionid', params['solutionid']);
         this.solutionService.getSolutionById(params['solutionid']).subscribe(data => {
           // console.log(data);
           this.solution = data;
           this.solutionDataService.setSolution(data);
-          this.router.navigate(['./solution/info'], {relativeTo: this.route});
+          this.router.navigate(['./info'], {relativeTo: this.route});
           this.isLoaded = true;
         });
       }

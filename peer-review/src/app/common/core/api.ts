@@ -12,10 +12,11 @@ export class Api {
   protected UserId: string = window.localStorage.userId;
   private httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json' //,
-      // 'Access-Control-Allow-Origin': '*'}
+      'Content-Type': 'application/json'
+
     })
   };
+  // 'Access-Control-Allow-Origin': '*'}
   // private httpOptions = {
   //   headers: new HttpHeaders({
   //     'Access-Control-Allow-Origin': '*'
@@ -38,7 +39,7 @@ export class Api {
   }
 
   public post(url: string = '', data: any = {}): Observable<any> {
-    // console.log(data);
+    console.log('json', data);
     return this.http.post(this.getUrl(url), data); // .subscribe(data => console.log(data));
   }
 

@@ -14,16 +14,23 @@ export class TaskService extends Api {
   createTask(task: TaskModel)
     : Observable<TaskModel> {
     this.params = new HttpParams({
-        fromObject: JSON.parse(JSON.stringify(task))
+        fromObject: {
+          Title: task.Title,
+          Description: task.Description,
+          CourseId: task.CourseId,
+          Posted: task.Posted.toDateString(),
+          CriteriaCollection: JSON.parse(JSON.stringify(task.CriteriaCollection)),
+          Id: null
+        }
+
       }
     );
-    // console.log('params', this.params.toString());
-    console.log('json', task);
-    return this.post(`tasks/Add`, this.params);
+    console.log( this.params);
+    return this.post(`tasks/Add`, this.params );
   }
 
   getTaskById(taskId: string): Observable<TaskModel> {
-    console.log(taskId);
+
     return this.get(`tasks/GetById/${taskId}`);
   }
 
