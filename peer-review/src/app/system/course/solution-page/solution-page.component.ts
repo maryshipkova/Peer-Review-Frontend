@@ -23,6 +23,10 @@ export class SolutionPageComponent implements OnInit {
     {
       'title': 'Add review',
       'route': 'add'
+    },
+    {
+      'title': 'Resolve solution',
+      'route': 'resolve'
     }
   ];
   solution: SolutionModel;

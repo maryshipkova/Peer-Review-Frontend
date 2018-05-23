@@ -4,6 +4,7 @@ import {Observable} from 'rxjs/index';
 import {TaskModel} from '../../../common/models/task.model';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {SolutionModel} from '../../../common/models/solution.model';
+import {ReviewModel} from '../../../common/models/review.model';
 
 @Injectable()
 export class SolutionService extends Api {
@@ -26,7 +27,7 @@ export class SolutionService extends Api {
     return this.get(`solutions/GetByTask/${taskId}`);
   }
 
-  resolveSolution(solutionId: string): Observable<SolutionModel> {
-    return this.post(`solutions/Resolve-solution/${solutionId}`);
+  resolveSolution(solutionId: string, review: ReviewModel): Observable<SolutionModel> {
+    return this.post(`solutions/Resolve-solution/${solutionId}`, review);
   }
 }

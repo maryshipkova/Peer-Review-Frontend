@@ -30,7 +30,6 @@ export class ReviewAddComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    console.log(form.value);
     let reviewCriteriaCollection = [];
     this.criteria.forEach((c, i) => {
         const points = form.value['point-' + i];
@@ -44,8 +43,6 @@ export class ReviewAddComponent implements OnInit {
       new Date(),
       reviewCriteriaCollection
     );
-    console.log(review);
-    console.log(JSON.stringify(review));
 
     this.sub = this.reviewService.createReview(review).subscribe(data => console.log(data));
   }

@@ -1,0 +1,38 @@
+<div class="course-content__fragment--element">
+  <h3 class="heading-tertiary display-4">Resolve</h3>
+  <hr>
+
+  <form #resolveForm="ngForm" (ngSubmit)="onSubmit(resolveForm)">
+  <!--criteria table-->
+  <div class="course-content__fragment--element">
+    <h3 class="heading-tertiary display-4">Criteria</h3>
+
+    <div class="criteria">
+      <table class="table criteria__table">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Score</th>
+
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr *ngFor="let criteria of criteriaCollection">
+          <th scope="row">1</th>
+          <td>{{criteria.Title}}</td>
+          <td>{{criteria.MaxPoint}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+    <button type="submit"
+            class="btn btn-outline-primary"
+            [disabled]="resolveForm.invalid"
+    >Submit
+    </button>
+  <!--/criteria table-->
+  </form>
+</div>

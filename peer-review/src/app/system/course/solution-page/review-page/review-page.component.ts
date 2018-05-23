@@ -16,7 +16,6 @@ export class ReviewPageComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private reviewService: ReviewService) {
-    console.log('meow');
   }
 
 

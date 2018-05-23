@@ -19,6 +19,7 @@ import {TaskAddComponent} from './course-page/task-add/task-add.component';
 import {CriteriaAddComponent} from './task/task-page/criteria-add/criteria-add.component';
 import {CourseInviteComponent} from './course-page/course-invite/course-invite.component';
 import {ReviewPageComponent} from './solution-page/review-page/review-page.component';
+import {SolutionResolveComponent} from './solution-page/solution-resolve/solution-resolve.component';
 
 
 const routes: Routes = [
@@ -58,7 +59,8 @@ const routes: Routes = [
                       {path: ':reviewid', component: ReviewPageComponent},
                     ]
                   },
-                  {path: 'add', component: ReviewAddComponent}
+                  {path: 'add', component: ReviewAddComponent},
+                  {path: 'resolve', component: SolutionResolveComponent}
                 ]
               }
             ]
