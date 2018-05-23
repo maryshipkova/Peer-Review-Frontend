@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {AuthService} from '../../common/services/auth.service';
 import {Router} from '@angular/router';
+import {UserModel} from '../../common/models/user.model';
+import {UserService} from '../../common/services/user.service';
 
 @Component({
   selector: 'peer-review-login',
@@ -10,7 +12,7 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(private authService: AuthService, private router: Router, private userService: UserService) {
   }
 
   ngOnInit() {
@@ -22,6 +24,9 @@ export class LoginComponent implements OnInit {
     this.authService.signIn(login, password).subscribe(data => {
       window.localStorage.setItem('token', data.TokenData);
       window.localStorage.setItem('userId', data.UserId);
+      this.userService.getUserById( data.UserId).subscribe(
+        (user: UserModel) => window.localStorage.setItem('username', user.Login));
+
       this.router.navigate(['/home']);
     });
   }

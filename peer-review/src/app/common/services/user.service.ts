@@ -12,8 +12,8 @@ export class UserService extends Api {
     super(http);
   }
 
-  getUserById(TokenData: string = window.localStorage.token, UserId: number = window.localStorage.userId): Observable<UserModel> {
-    return this.get(`User`);
+  getUserById(id: string = this.UserId): Observable<UserModel> {
+    return this.get(`users/GetById/${id}`);
   }
 
   getUserByLogin(login: string) {

@@ -12,7 +12,8 @@ export class Api {
   protected UserId: string = window.localStorage.userId;
   private httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*'
 
     })
   };
@@ -24,7 +25,13 @@ export class Api {
 
   }
 
+  private setData() {
+    this.TokenData = window.localStorage.token;
+    this.UserId = window.localStorage.userId;
+  }
+
   private getUrl(url: string = ''): string {
+    if(!this.TokenData)this.setData();
     return this.baseUrl + url + `?TokenData=${this.TokenData}&UserId=${this.UserId}`;
   }
 
@@ -34,6 +41,7 @@ export class Api {
 
 
   public get(url: string = ''): Observable<any> {
+    console.log(this.getUrl(url));
     return this.http.get(this.getUrl(url)); // .subscribe(data => console.log(data));
   }
 
@@ -47,7 +55,6 @@ export class Api {
   }
 
   public postWithoutParams(url: string = '', data: any = {}): Observable<any> {
-    console.log('json', data);
     return this.http.post(this.getPureUrl(url), data, this.httpOptions); // .subscribe(data => console.log(data));
   }
 }
