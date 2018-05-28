@@ -17,7 +17,7 @@ export class CoursesPageComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.sub = this.courseService.getCourseListByUser().subscribe(data => {
       this.courses = data;
-      console.log(this.courses);
+      // console.log(this.courses);
     });
   }
 

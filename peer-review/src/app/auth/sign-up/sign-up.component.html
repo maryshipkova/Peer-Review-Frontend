@@ -1,14 +1,12 @@
 <div class="auth">
-  <form class="auth__form" #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm)">
-    <h1 class="display-4 text-center">Sign up plz</h1>
+  <form [formGroup]="form" (submit)="onSubmit()">
+    <h1 class="display-4 text-center">Sign up</h1>
     <div class="form-group">
       <label for="login">Login</label>
       <input type="text" class="form-control"
              id="login"
              placeholder="Enter login"
-             required
-             name="login"
-             ngModel
+             formControlName="login"
       >
     </div>
     <div class="form-group">
@@ -16,9 +14,7 @@
       <input type="email" class="form-control"
              id="email"
              placeholder="Enter email"
-             email required
-             name="email"
-             ngModel
+             formControlName="email"
       >
     </div>
 
@@ -27,20 +23,16 @@
       <input type="text" class="form-control"
              id="firstname"
              placeholder="Enter your first name"
-             required
-             name="firstname"
-             ngModel
+             formControlName="firstName"
       >
     </div>
 
     <div class="form-group">
-      <label for="secondname">Second name</label>
+      <label for="secondname">Last name</label>
       <input type="text" class="form-control"
              id="secondname"
-             placeholder="Enter your second name"
-             required
-             name="second"
-             ngModel
+             placeholder="Enter your last name"
+             formControlName="lastName"
       >
     </div>
 
@@ -50,15 +42,23 @@
              class="form-control"
              id="password"
              placeholder="Password"
-             required
-             name="password"
-             ngModel
+             formControlName="password"
       >
     </div>
 
+    <div class="form-group">
+      <label for="biography">Additional info</label>
+      <input type="text"
+             class="form-control"
+             id="biography"
+             placeholder="I love UML"
+             formControlName="biography"
+      >
+    </div>
     <button type="submit" class="btn btn-outline-success btn-block"
-            [disabled]="signupForm.invalid"
+            [disabled]="form.invalid"
     >Submit
     </button>
   </form>
 </div>
+

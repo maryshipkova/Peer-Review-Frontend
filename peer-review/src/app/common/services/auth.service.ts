@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {Api} from '../core/api';
+import {UserModel} from '../models/user.model';
 
 
 @Injectable()
@@ -10,28 +11,15 @@ export class AuthService extends Api {
     super(http);
   }
 
-  signUp(login: string, password: string) {  // etc
-    // this.params = new HttpParams({
-    //   fromObject: {
-    //     token: token,
-    //     userId: userId
-    //   }
-    // });
-    return this.post(`users/Sign-up`, {
-        'params': this.params
-      }
-    );
+  signUp(user: UserModel) {  // etc
+    return this.postWithoutParams(`users/Sign-up`, user);
   }
 
   signOut() {
-    this.params = new HttpParams({
-      fromObject: {
+
+    return this.post(`users/Sign-out`, {
         token: this.TokenData,
         userId: this.UserId
-      }
-    });
-    return this.post(`users/Sign-out`, {
-        'params': this.params
       }
     );
   }
@@ -39,8 +27,8 @@ export class AuthService extends Api {
   signIn(login: string, password: string) {
     return this.postWithoutParams(`users/Sign-in`,
       {
-        'Login': '5MZBV8HOJ9JFBJV',
-        'Password': 'T7S5T0MRMO07OQL'
+        'Login': login,
+        'Password': password
       });
   }
 }

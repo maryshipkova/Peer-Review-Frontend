@@ -18,7 +18,7 @@ import {TaskModel} from '../../../../common/models/task.model';
 export class SolutionResolveComponent implements OnInit {
   criteriaCollection: CriteriaModel[];
   solutionId: string;
-  ratingCollection = [];
+  ratingCollection: ReviewCriteriaModel[] = [];
   isLoaded = false;
 
   constructor(private taskDataService: TaskDataService, private solutionDataService: SolutionDataService,
@@ -26,29 +26,35 @@ export class SolutionResolveComponent implements OnInit {
   }
 
   ngOnInit() {
-    let rating = [];
+    let rating: ReviewCriteriaModel[] = [];
     this.criteriaCollection = this.taskDataService.getTask().CriteriaCollection;
     this.solutionId = this.solutionDataService.getSolution().Id;
     this.reviewService.getReviewListBySolution(this.solutionId).subscribe((reviews: ReviewModel[]) =>
       reviews.forEach(review => {
         this.reviewService.getReviewById(review.Id).subscribe(r => {
-          rating.push(...r.RateCollection);
-        });
-        console.log('rating', rating);
-        for (const rate in rating) {
-          console.log('rate', rate);
-
-          let match = false;
-          this.ratingCollection.forEach(avgRate => {
-            if (avgRate.CriteriaId === rating[rate].CriteriaId) {
-              match = true;
-              avgRate.Rating = (avgRate.Rating + rating[rate].Rating) / 2;
+          // console.log(r);
+          // rating.push(...r.RateCollection);
+          r.RateCollection.forEach((rate: ReviewCriteriaModel) => {
+            console.log('rate', rate);
+            if (!this.ratingCollection.length) {
+              this.ratingCollection.push(rate);
+            }
+            else {
+              let match = false;
+              this.ratingCollection.forEach(reviewItem => {
+                console.log('item', reviewItem);
+                if (reviewItem.CriteriaId === rate.CriteriaId) {
+                  match = true;
+                  reviewItem.Rating = (reviewItem.Rating + rate.Rating) / 2;
+                }
+              });
+              if (!match) this.ratingCollection.push(rate);
             }
           });
-          if (!match) this.ratingCollection.push(rating[rate]);
-        }
-        console.log(this.ratingCollection);
-        this.isLoaded = true;
+          console.log('collection', this.ratingCollection);
+          this.isLoaded = true;
+        });
+
 
       }));
 
@@ -56,20 +62,17 @@ export class SolutionResolveComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    let reviewCriteriaCollection = [];
-    this.criteriaCollection.forEach((c, i) => {
-        const points = form.value['point-' + i];
-        const reviewCriteria = new ReviewCriteriaModel(c.Title, points ? points : c.MaxPoint, c.Id);
-        reviewCriteriaCollection.push(reviewCriteria);
+    this.ratingCollection.forEach((ratingItem, i) => {
+        if (form.value['criteria-' + i])
+          ratingItem.Rating = form.value['criteria-' + i];
       }
     );
     const review = new ReviewModel(
       window.localStorage.userId,
       this.solutionId,
       new Date(),
-      reviewCriteriaCollection
+      this.ratingCollection
     );
-
     this.solutionService.resolveSolution(this.solutionId, review).subscribe(data => console.log(data));
   }
 }
