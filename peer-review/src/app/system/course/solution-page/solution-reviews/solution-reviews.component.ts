@@ -23,7 +23,7 @@ export class SolutionReviewsComponent implements OnInit, OnDestroy {
     this.sub = this.reviewService.getReviewListBySolution(solutionId).subscribe(data => {
       this.reviews = data;
       this.isLoaded = true;
-      console.log(data);
+
     });
   }
 

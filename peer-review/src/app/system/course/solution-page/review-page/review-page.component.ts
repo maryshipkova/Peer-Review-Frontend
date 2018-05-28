@@ -24,7 +24,7 @@ export class ReviewPageComponent implements OnInit {
       console.log(params.reviewid);
       if (params.reviewid) {
         this.reviewService.getReviewById(params.reviewid).subscribe(data => {
-          console.log(data);
+
           this.review = data;
           this.isLoaded = true;
         });

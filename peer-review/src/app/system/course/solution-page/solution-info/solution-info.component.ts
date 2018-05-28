@@ -9,7 +9,8 @@ import {SolutionDataService} from '../solution-data.service';
 })
 export class SolutionInfoComponent implements OnInit {
   solution: SolutionModel;
-  username=window.localStorage.username;
+  username = window.localStorage.username;
+
   constructor(private solutionDataService: SolutionDataService) {
   }
 

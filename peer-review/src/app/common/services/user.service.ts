@@ -17,7 +17,7 @@ export class UserService extends Api {
   }
 
   getUserByLogin(login: string) {
-
+    return this.get(`users/GetByUsername/${login}`);
   }
 
   updateUser(token: string, user: UserModel) {
