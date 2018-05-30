@@ -8,16 +8,16 @@ import {CourseComponent} from './course/course.component';
 import {SolutionPageComponent} from './course/solution-page/solution-page.component';
 
 import {CourseCreationPageComponent} from './course-creation-page/course-creation-page.component';
+import {AuthGuardService} from '../common/services/auth-guard.service';
 
 const routes: Routes = [
   {
     path: '', component: SystemComponent,
     children: [
       {path: 'home', component: HomePageComponent},
-      {path: 'courses', component: CoursesPageComponent},
-      {path: 'invitations', component: InvitationsPageComponent},
-      {path: 'solution', component: SolutionPageComponent},
-      {path: 'create-course', component: CourseCreationPageComponent}
+      {path: 'courses', component: CoursesPageComponent, canActivate: [AuthGuardService]},
+      {path: 'invitations', component: InvitationsPageComponent, canActivate: [AuthGuardService]},
+      {path: 'create-course', component: CourseCreationPageComponent, canActivate: [AuthGuardService]}
     ]
   }
 ];
