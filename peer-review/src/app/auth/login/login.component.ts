@@ -4,6 +4,7 @@ import {AuthService} from '../../common/services/auth.service';
 import {Router} from '@angular/router';
 import {UserModel} from '../../common/models/user.model';
 import {UserService} from '../../common/services/user.service';
+import {Message} from '../../common/models/message.model';
 
 @Component({
   selector: 'peer-review-login',
@@ -11,23 +12,30 @@ import {UserService} from '../../common/services/user.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  message: Message;
 
   constructor(private authService: AuthService, private router: Router, private userService: UserService) {
   }
 
   ngOnInit() {
+    this.message = new Message('danger', '');
   }
 
   onSubmit(form: NgForm) {
     const {login, password} = form.value;
 
     this.authService.signIn(login, password).subscribe(data => {
-      window.localStorage.setItem('token', data.TokenData);
-      window.localStorage.setItem('userId', data.UserId);
-      this.userService.getUserById( data.UserId).subscribe(
-        (user: UserModel) => window.localStorage.setItem('username', user.Login));
+        window.localStorage.setItem('token', data.TokenData);
+        window.localStorage.setItem('userId', data.UserId);
+        this.userService.getUserById(data.UserId).subscribe(
+          (user: UserModel) => window.localStorage.setItem('username', user.Login));
 
-      this.router.navigate(['/home']);
-    });
+        this.router.navigate(['/home']);
+
+      },
+      err => {
+        this.message.showMessage( 'Write correct data',  'danger');
+      });
   }
+
 }
