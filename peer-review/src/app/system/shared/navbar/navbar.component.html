@@ -17,7 +17,7 @@
         <a class="nav-link" [routerLink]="['/create-course']">Create course</a>
       </li>
     </ul>
-    <div class="nav-item" *ngIf="!username"><a [routerLink]="['/auth/login']">Login</a></div>
+    <div class="nav-item" *ngIf="!username"><a class="dropdown-header" [routerLink]="['/auth/login']">Login</a></div>
 
     <div class="nav-item dropdown" *ngIf="username">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"

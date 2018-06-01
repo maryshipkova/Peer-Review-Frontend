@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'peer-review-navbar',
@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  username= window.localStorage.username;
-  constructor() { }
+  username = window.localStorage.username;
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

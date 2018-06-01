@@ -23,7 +23,6 @@ body {
 a{
   &:link,
   &:visited{
-    color: $color-black;
       text-decoration: none;
   }
   &:focus{
