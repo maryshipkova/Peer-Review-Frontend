@@ -1,11 +1,11 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {AuthComponent} from './auth/auth.component';
+import {NotFoundComponent} from './common/components/not-found/not-found.component';
 
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
-  // {path: 'auth', component: AuthComponent}
+  {path: '**', component: NotFoundComponent}
 
 ];
 

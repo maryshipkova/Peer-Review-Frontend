@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import {SystemModule} from './system/system.module';
 import {AuthModule} from './auth/auth.module';
 import {HttpClientJsonpModule, HttpClientModule} from '@angular/common/http';
+import { NotFoundComponent } from './common/components/not-found/not-found.component';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
