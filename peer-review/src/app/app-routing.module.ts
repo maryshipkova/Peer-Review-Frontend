@@ -3,9 +3,11 @@ import {Routes, RouterModule} from '@angular/router';
 import {NotFoundComponent} from './common/components/not-found/not-found.component';
 
 
+
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: '**', component: NotFoundComponent}
+  {path: '**', component: NotFoundComponent},
+  // {path: '**', redirectTo: '/404'}
 
 ];
 

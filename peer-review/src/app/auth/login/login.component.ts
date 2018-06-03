@@ -34,7 +34,8 @@ export class LoginComponent implements OnInit {
 
       },
       err => {
-        this.message.showMessage( 'Write correct data',  'danger');
+        console.log(err);
+        this.message.showMessage(err.status === 400 ? 'Write correct data' : err.statusText, 'danger');
       });
   }
 
