@@ -26,11 +26,37 @@ export class CourseService extends Api {
     return this.get(`courses/GetByUser`);
   }
 
-  inviteUser(userId: string, token: string, courseId: number): Observable<CourseModel> {
-    return this.post('url', [userId, token, courseId]);
+  getInvitesByUser(): Observable<CourseModel[]> {
+    return this.get(`courses/GetInvitesByUser`);
   }
 
-  isMember(token: string, courseId: string): Observable<CourseModel> {
-    return this.get('url');
+  inviteUser(username: string, courseId: number): Observable<CourseModel> {
+    return this.post(`courses/Invite/${courseId}/${username}`);
+  }
+
+  acceptInvite(courseId: number): Observable<CourseModel> {
+    return this.post(`courses/Accept-Invite/${courseId}`);
+  }
+
+  isMember(courseId: string): Observable<CourseModel> {
+    return this.get(`courses/IsMember/${courseId}`);
+  }
+
+  updateCourse(course: CourseModel)
+    : Observable<CourseModel> {
+
+    return this.post(`courses/Update`, course);
+  }
+
+  deleteCourse(courseId: string)
+    : Observable<CourseModel> {
+
+    return this.delete(`courses/Delete/${courseId}`);
+  }
+
+  deleteMember(courseId: string, userId: string)
+    : Observable<CourseModel> {
+
+    return this.delete(`courses/Delete-member/${courseId}/${userId}`);
   }
 }

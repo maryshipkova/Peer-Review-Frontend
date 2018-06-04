@@ -17,12 +17,20 @@ export class ReviewService extends Api {
     return this.post(`Review`, review);
   }
 
-  getReviewById( reviewId: string): Observable<ReviewModel> {
+  getReviewById(reviewId: string): Observable<ReviewModel> {
     return this.get(`reviews/${reviewId}`);
   }
 
   getReviewListBySolution(solutionId: string): Observable<ReviewModel[]> {
     return this.get(`reviews/GetBySolution/${solutionId}`);
+  }
+
+  getReviewListBySolutionAndUser(solutionId: string, userId: string): Observable<ReviewModel[]> {
+    return this.get(`reviews/GetBySolutionANdUser/${solutionId}/${userId}`);
+  }
+
+  deleteReview(reviewId: string): Observable<ReviewModel> {
+    return this.delete(`reviews/${reviewId}`);
   }
 
 }

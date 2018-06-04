@@ -14,8 +14,6 @@ export class SolutionService extends Api {
   }
 
   createSolution(solution: SolutionModel): Observable<SolutionModel> {
-
-
     return this.post(`Solution`, solution);
   }
 
@@ -27,7 +25,18 @@ export class SolutionService extends Api {
     return this.get(`solutions/GetByTask/${taskId}`);
   }
 
+  getSolutionListByTaskAndUser(taskId: string, userId: string): Observable<SolutionModel[]> {
+    return this.get(`solutions/GetByTaskAndUser/${taskId}/${userId}`);
+  }
+
   resolveSolution(solutionId: string, review: ReviewModel): Observable<SolutionModel> {
     return this.post(`solutions/Resolve-solution/${solutionId}`, review);
   }
+  canReview(solutionId: string, review: ReviewModel): Observable<SolutionModel> {
+    return this.post(`solutions/Is-can-review/${solutionId}`);
+  }
+  deleteSolution(solutionId: string): Observable<SolutionModel> {
+    return this.delete(`solutions/${solutionId}`);
+  }
+
 }

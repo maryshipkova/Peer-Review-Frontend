@@ -20,6 +20,7 @@ export class UserService extends Api {
     return this.get(`users/GetByUsername/${login}`);
   }
 
-  updateUser(token: string, user: UserModel) {
+  updateUser(user: UserModel) {
+    return this.post('users/Update', user);
   }
 }

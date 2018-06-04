@@ -24,5 +24,8 @@ export class TaskService extends Api {
   getTaskListByCourse(courseId: string): Observable<TaskModel[]> {
     return this.get(`tasks/GetByCourse/${courseId}`);
   }
-
+  deleteTask(taskId: string)
+    : Observable<TaskModel> {
+    return this.delete(`tasks/Delete/${taskId}`);
+  }
 }
