@@ -37,7 +37,6 @@ export class TaskAddComponent implements OnInit, OnDestroy {
       }
     }
     const task = new TaskModel(title, description, this.courseId, new Date(), criterias);
-    console.log('task', task);
     this.sub = this.taskService.createTask(task).subscribe(data => console.log('response', data));
 
   }

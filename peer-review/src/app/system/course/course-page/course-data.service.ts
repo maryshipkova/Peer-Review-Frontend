@@ -19,4 +19,8 @@ export class CourseDataService {
   clear() {
     this.course = undefined;
   }
+
+  getUserStatus(): string {
+    return (this.course.Mentor.Id === window.localStorage.userId) ? 'M' : 'S';
+  }
 }

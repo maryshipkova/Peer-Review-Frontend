@@ -1,5 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, ParamMap, Params, Router} from '@angular/router';
+import {CourseDataService} from './course-data.service';
 
 
 @Component({
@@ -8,7 +9,7 @@ import {ActivatedRoute, ParamMap, Params, Router} from '@angular/router';
   styleUrls: ['./course-page.component.scss']
 })
 export class CoursePageComponent implements OnInit {
-
+  userStatus: string;
   navRoutes = [
     {
       'title': 'Course information',
@@ -22,6 +23,10 @@ export class CoursePageComponent implements OnInit {
       'title': 'Students',
       'route': 'students'
     },
+
+  ];
+
+  mentorRoutes = [
     {
       'title': 'Add task',
       'route': 'add'
@@ -32,11 +37,16 @@ export class CoursePageComponent implements OnInit {
     }
   ];
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private courseDataService: CourseDataService) {
 
   }
 
   ngOnInit() {
+    this.userStatus = this.courseDataService.getUserStatus();
+
+    if (this.userStatus === 'M') {
+      this.navRoutes.push(...this.mentorRoutes);
+    }
     // this.router.navigate(['./course/info'], {relativeTo: this.route});
   }
 }
