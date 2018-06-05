@@ -16,4 +16,7 @@ export class CourseDataService {
     return this.course;
   }
 
+  clear() {
+    this.course = undefined;
+  }
 }

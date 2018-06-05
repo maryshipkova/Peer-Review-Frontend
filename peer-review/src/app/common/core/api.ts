@@ -54,7 +54,8 @@ export class Api {
     return this.http.put(this.getUrl(url), data, this.httpOptions); // .subs
   }
   public delete(url: string = '', data: any = {}): Observable<any> {
-    return this.http.delete(url); // TODO
+    console.log('delete', this.getUrl(url));
+    return this.http.delete(this.getUrl(url), this.httpOptions); // TODO
   }
   public postWithoutParams(url: string = '', data: any = {}): Observable<any> {
     console.log('post w/o params', data);

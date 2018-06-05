@@ -1,110 +1,112 @@
 .course {
-    &__info {
-        background-color: $color-white;
-        border-radius: 5px;
-        padding: 0.5rem 1rem;
-    }
-    &__header {
-        display: flex;
-    }
-    &__image {
-        width: 7rem;
-        height: 7rem;
-        background-image: linear-gradient(to right bottom, $color-blue-light, $color-blue-dark);
-        border-radius: 50%;
-        margin-left: 2rem;
-    }
-    &__heading {
+  &__info {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+  }
+  &__header{
+    display: flex;
+  }
+  &__row {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__image {
+    width: 7rem;
+    height: 7rem;
+    background-image: linear-gradient(to right bottom, $color-blue-light, $color-blue-dark);
+    border-radius: 50%;
+    margin-left: 2rem;
+  }
+  &__heading {
 
-        margin-left: 2rem; // font-size: ;
-      &>a{
-        color: black;
-      }
+    margin-left: 2rem; // font-size: ;
+    & > a {
+      color: black;
     }
-    &__description {
-        margin: 1rem 2rem 1rem 3.5rem;
-    }
+  }
+  &__description {
+    margin: 1rem 2rem 1rem 3.5rem;
+  }
+
+  &__options {
+  }
 }
 
 .course-content {
 
-    margin-top: $component-margin;
-    justify-content: space-between;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
+  margin-top: $component-margin;
+  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
 
+  &__nav {
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    flex: 0 0 20%;
+    // margin: ;
+    margin-right: 1.5rem;
 
+    &--list {
+      height: 100%;
+      width: 100%;
+      margin: 0px;
+      padding-left: 0px;
 
-
-    &__nav {
-      background: $color-white;
-      border-radius: 5px;
-      overflow: hidden;
-        flex: 0 0 20%;
-        // margin: ;
-        margin-right: 1.5rem;
-
-
-        &--list{
-            height: 100%;
-            width: 100%;
-            margin: 0px;
-            padding-left: 0px;
-
-            display: flex;
-            flex-direction: column;
-        }
-
-        &--link{
-          color: black;
-            display: block;
-            height: 100%;
-            width: 100%;
-
-            &:hover{
-                background-color: #eee;
-            }
-        }
-
-        &--item{
-
-        }
-
-        &--heading{
-            display: inline-block;
-            padding: 1rem;
-        }
-    }
-
-    &__fragment {
-      flex: 1 1;
       display: flex;
       flex-direction: column;
-
-
-      &--element{
-        background: $color-white;
-        border-radius: 5px;
-        padding: 0.5rem;
-        margin-bottom: $component-margin;
-      }
-        &--list {
-            margin: 1rem 2rem 1rem 0;
-        }
-
-      &--link{
-        @include fill-link;
-
-      }
-        &--item {
-            border-bottom: 1px solid $color-blue-light;
-            transition: all .2s;
-            margin-bottom: 2rem;
-            &:hover {
-                cursor: pointer;
-                transform: translateY(-2px);
-            }
-        }
     }
+
+    &--link {
+      color: black;
+      display: block;
+      height: 100%;
+      width: 100%;
+
+      &:hover {
+        background-color: #eee;
+      }
+    }
+
+    &--item {
+
+    }
+
+    &--heading {
+      display: inline-block;
+      padding: 1rem;
+    }
+  }
+
+  &__fragment {
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+
+    &--element {
+      background: #fff;
+      border-radius: 5px;
+      padding: 0.5rem;
+      margin-bottom: $component-margin;
+    }
+    &--list {
+      margin: 1rem 2rem 1rem 0;
+    }
+
+    &--link {
+      @include fill-link;
+
+    }
+    &--item {
+      border-bottom: 1px solid $color-blue-light;
+      transition: all .2s;
+      margin-bottom: 2rem;
+      &:hover {
+        cursor: pointer;
+        transform: translateY(-2px);
+      }
+    }
+  }
 }

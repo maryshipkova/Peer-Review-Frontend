@@ -3,17 +3,29 @@
   <section class="course" *ngIf="isLoaded">
 
     <div class="course__info">
-      <div class="course__header">
-        <div class="course__image"></div>
-        <h1 class="course__heading text-muted display-4">
-          <a [routerLink]="['/system/'+course.Id+'/course/info']">{{course.Title}}</a>
+      <div class="course__row">
+        <div class="course__header">
+          <div class="course__image"></div>
+          <h1 class="course__heading text-muted display-4">
+            <a [routerLink]="['/system/'+course.Id+'/course/info']">{{course.Title}}</a>
 
-          <hr>
-        </h1>
+            <hr>
+          </h1>
+        </div>
+
+        <div class="course__options">
+          <button (click)="onDelete()"
+                  class="btn btn-outline-danger"
+          >Delete course
+          </button>
+        </div>
+
       </div>
+
       <p class="course__description">
        {{course.Description}}
       </p>
+
     </div>
       <router-outlet></router-outlet>
   </section>

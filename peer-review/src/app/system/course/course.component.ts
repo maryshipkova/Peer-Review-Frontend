@@ -23,7 +23,7 @@ export class CourseComponent implements OnInit {
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-      if ( !this.course && params['courseid']) { // if route is active
+      if (!this.course && params['courseid']) { // if route is active
         this.courseService.getCourseById(params['courseid']).subscribe(data => {
           this.course = data;
           this.courseDataService.setCourse(data);
@@ -32,6 +32,13 @@ export class CourseComponent implements OnInit {
         });
       }
 
+    });
+  }
+
+  onDelete() {
+    this.courseService.deleteCourse(this.course.Id).subscribe(() => {
+      // this.courseDataService.clear();
+      this.router.navigate(['/system/courses']);
     });
   }
 }
