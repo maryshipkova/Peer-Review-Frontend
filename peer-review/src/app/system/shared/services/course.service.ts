@@ -30,11 +30,11 @@ export class CourseService extends Api {
     return this.get(`courses/GetInvitesByUser`);
   }
 
-  inviteUser(username: string, courseId: number): Observable<CourseModel> {
+  inviteUser(username: string, courseId: string): Observable<CourseModel> {
     return this.post(`courses/Invite/${courseId}/${username}`);
   }
 
-  acceptInvite(courseId: number): Observable<CourseModel> {
+  acceptInvite(courseId: string): Observable<CourseModel> {
     return this.post(`courses/Accept-Invite/${courseId}`);
   }
 

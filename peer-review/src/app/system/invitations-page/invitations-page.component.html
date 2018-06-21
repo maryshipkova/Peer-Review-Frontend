@@ -1,12 +1,13 @@
 <main class="container">
   <section class="courses">
-    <ul class="courses__list">
+    <div *ngIf="!isLoaded">loading...</div>
+    <ul class="courses__list" *ngIf="isLoaded">
       <h1 class="heading-primary">Invitations</h1>
-      <li class="courses__list--item">
+      <li class="courses__list--item" *ngFor="let invite of invites">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">invitation</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, quas.</p>
+            <h5 class="card-title">{{invite.Title}}</h5>
+            <p class="card-text">{{invite.Description}}</p>
           </div>
         </div>
       </li>

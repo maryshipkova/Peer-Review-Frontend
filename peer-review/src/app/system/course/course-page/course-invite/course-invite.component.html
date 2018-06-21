@@ -1,18 +1,17 @@
 <div class="course-content__fragment--element">
   <h3 class="heading-tertiary display-4">Invite user</h3>
-  nope, it is not working
   <hr>
 
   <form class="form" #inviteForm="ngForm" (ngSubmit)="onSubmit(inviteForm)">
     <div class="form-group">
       <!--[ngClass]="{'has-error': name.invalid && name.touched}"-->
 
-      <label for="task-title">User login</label>
+      <label for="username">User login</label>
       <input type="text"
              class="form-control"
-             id="task-title" placeholder="Enter user login"
+             id="username" placeholder="Enter username"
              required
-             name="login"
+             name="username"
              ngModel
       >
     </div>
