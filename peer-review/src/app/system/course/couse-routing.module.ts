@@ -20,6 +20,7 @@ import {CriteriaAddComponent} from './task/task-page/criteria-add/criteria-add.c
 import {CourseInviteComponent} from './course-page/course-invite/course-invite.component';
 import {ReviewPageComponent} from './solution-page/review-page/review-page.component';
 import {SolutionResolveComponent} from './solution-page/solution-resolve/solution-resolve.component';
+import {CourseDeleteComponent} from './course-page/course-delete/course-delete.component';
 
 
 const routes: Routes = [
@@ -35,7 +36,8 @@ const routes: Routes = [
               {path: 'students', component: CourseStudentsComponent},
               {path: 'tasks', component: CourseTasksComponent},
               {path: 'add', component: TaskAddComponent},
-              {path: 'invite', component: CourseInviteComponent}
+              {path: 'invite', component: CourseInviteComponent},
+              {path: 'delete', component: CourseDeleteComponent}
             ],
           },
           {

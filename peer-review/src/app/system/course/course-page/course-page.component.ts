@@ -34,6 +34,10 @@ export class CoursePageComponent implements OnInit {
     {
       'title': 'Invite user',
       'route': 'invite'
+    },
+    {
+      'title': 'Delete course',
+      'route': 'delete'
     }
   ];
 

@@ -25,6 +25,7 @@ import {TaskDataService} from './task/task-data.service';
 import {SolutionDataService} from './solution-page/solution-data.service';
 import { ReviewPageComponent } from './solution-page/review-page/review-page.component';
 import { SolutionResolveComponent } from './solution-page/solution-resolve/solution-resolve.component';
+import { CourseDeleteComponent } from './course-page/course-delete/course-delete.component';
 
 @NgModule({
   imports: [
@@ -52,7 +53,8 @@ import { SolutionResolveComponent } from './solution-page/solution-resolve/solut
     CriteriaAddComponent,
     CourseInviteComponent,
     ReviewPageComponent,
-    SolutionResolveComponent
+    SolutionResolveComponent,
+    CourseDeleteComponent
   ], providers: [CourseDataService, TaskDataService, SolutionDataService]
 })
 

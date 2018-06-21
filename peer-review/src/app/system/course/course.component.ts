@@ -36,12 +36,6 @@ export class CourseComponent implements OnInit, OnDestroy {
     });
   }
 
-  onDelete() {
-    this.courseService.deleteCourse(this.course.Id).subscribe(() => {
-      // this.courseDataService.clear();
-      this.router.navigate(['/system/courses']);
-    });
-  }
 
   ngOnDestroy(): void {
     if (this.sub1) this.sub1.unsubscribe();
