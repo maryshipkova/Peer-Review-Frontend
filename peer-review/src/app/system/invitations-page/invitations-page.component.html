@@ -6,8 +6,14 @@
       <li class="courses__list--item" *ngFor="let invite of invites">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">{{invite.Title}}</h5>
-            <p class="card-text">{{invite.Description}}</p>
+            <div class="card-info">
+              <h5 class="card-title">{{invite.Title}}</h5>
+              <p class="card-text">{{invite.Description}}</p>
+            </div>
+            <div class="choice-buttons">
+              <button class="btn btn-outline-success" (click)="OnAccept(invite.Id)">Accept</button>
+              <button class="btn btn-outline-danger" (click)="OnDecline(invite.Id)">Decline</button>
+            </div>
           </div>
         </div>
       </li>

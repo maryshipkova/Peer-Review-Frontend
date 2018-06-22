@@ -20,7 +20,11 @@ export class CourseInfoComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.course = this.courseDataService.getCourse();
-    this.sub = this.userService.getUserById(this.course.Mentor.Id).subscribe(user => this.mentorName = user.Login);
+    this.sub = this.userService.getUserById(this.course.Mentor.Id).subscribe(user => {
+      console.log(user);
+      this.mentorName = user.Login;
+    });
+    console.log(this.course.Mentor.Id);
   }
 
   ngOnDestroy(): void {

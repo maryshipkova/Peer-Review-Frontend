@@ -21,4 +21,16 @@ export class InvitationsPageComponent implements OnInit {
     });
   }
 
+  OnAccept(courseId) {
+    this.courseService.acceptInvite(courseId).subscribe(data => {
+      console.log('success! ', data);
+    });
+  }
+
+  OnDecline(courseId) {
+    //meow
+  }
 }
+
+
+
